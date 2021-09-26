@@ -1,20 +1,21 @@
 package com.eltonkola.bllok.generator
 
+import com.eltonkola.bllok.Bllok
 import com.eltonkola.bllok.data.model.AppData
+import java.io.File
 
-class BllokGenerator(
-    val templatePath : String,
-    val outputPath : String
-) {
+class BllokGenerator{
 
     fun generate(appData: AppData){
 
         //clean the output folder
+        cleanDirectory(Bllok.outputPath)
 
-        cleanDirectory(outputPath)
+        val index = openFile("${Bllok.templatePath}index.html")
+        saveFile("${Bllok.outputPath}index.html", index)
 
-        val index = openFile("${templatePath}index.html")
-        saveFile("${outputPath}index.html", index)
+        //copy res folder
+        File("${Bllok.templatePath}res").copyRecursively(File("${Bllok.outputPath}res"), true)
 
     }
 

@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="156d3767-6ff7-4248-8194-7eebd0b8fef6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/eltonkola/bllok/Bllok.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/eltonkola/bllok/Bllok.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/eltonkola/bllok/generator/BllokGenerator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/eltonkola/bllok/generator/BllokGenerator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/eltonkola/bllok/generator/GenerateUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/eltonkola/bllok/generator/GenerateUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
