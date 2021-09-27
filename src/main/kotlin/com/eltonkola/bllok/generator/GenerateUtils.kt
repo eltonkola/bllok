@@ -9,6 +9,7 @@ import org.intellij.markdown.parser.MarkdownParser
 import java.io.File
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
+import java.util.*
 
 enum class Tag(val open: String, val close: String, val conditional: String? = null){
     INCLUDE("<include>","</include>"),
@@ -88,7 +89,7 @@ fun getArticlePageName(article: Article) : String {
 }
 
 fun String.cleanForUrl() : String {
-    return this.replace(" ", "_")
+    return this.replace(" ", "_").lowercase(Locale.getDefault())
 }
 
 fun String.getSummary() : String {

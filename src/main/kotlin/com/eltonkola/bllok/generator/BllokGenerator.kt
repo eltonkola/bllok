@@ -122,7 +122,7 @@ class BllokGenerator(val appData: AppData){
 
                     val nrPages = (appData.articles.size / appData.config.postsPerPage) - 1
                     (0..nrPages).forEach {
-                        var menuItem = template.ifCurrentPageContent(fileName, it)
+                        var menuItem = template.ifCurrentCategoryPageContentPager(fileName, category, it)
                         menuItem = menuItem.replace(ContentTags.TEXT.tag, it.toString())
                         menuItem = menuItem.replace(ContentTags.HREF.tag, getCategoryPageName(it, category))
                         menuItem = menuItem.cleanTag(Tag.CATEGORIES)
@@ -195,8 +195,8 @@ class BllokGenerator(val appData: AppData){
                 menuItem = menuItem.cleanTag(Tag.CATEGORIES)
                 menuContent += menuItem
             }
-            println("template: $template")
-            println("menuContent: $menuContent")
+           // println("template: $template")
+           // println("menuContent: $menuContent")
             pageContent = pageContent.replace(template, menuContent)
         }
 
@@ -211,8 +211,28 @@ class BllokGenerator(val appData: AppData){
         if(!this.contains(Tag.IF_CURRENT.open)){
             return this
         }
-        val isSamePage = currentPath == getCategoryPageName(1, category)
+        val categoryPath = getCategoryPageName(0, category)
+        val isSamePage = currentPath == categoryPath ||
+                currentPath.replace(".html","").contains(categoryPath.replace(".html",""))
+
         return if(isSamePage){
+            print("if $categoryPath == $currentPath \n")
+            this.between(Tag.IF_CURRENT.open, Tag.IF_CURRENT.conditional!!)
+        }else{
+            this.between(Tag.IF_CURRENT.conditional!!, Tag.IF_CURRENT.close)
+        }
+    }
+
+    private fun String.ifCurrentCategoryPageContentPager(currentPath : String, category: Label, page: Int) : String {
+        if(!this.contains(Tag.IF_CURRENT.open)){
+            return this
+        }
+        val categoryPath = getCategoryPageName(page, category)
+        val isSamePage = currentPath == categoryPath ||
+                if(page == 0) false else currentPath.replace(".html","").contains(categoryPath.replace(".html",""))
+
+        return if(isSamePage){
+            print("if $categoryPath == $currentPath \n")
             this.between(Tag.IF_CURRENT.open, Tag.IF_CURRENT.conditional!!)
         }else{
             this.between(Tag.IF_CURRENT.conditional!!, Tag.IF_CURRENT.close)
@@ -223,7 +243,9 @@ class BllokGenerator(val appData: AppData){
         if(!this.contains(Tag.IF_CURRENT.open)){
             return this
         }
-        val isSamePage = currentPath == getIndexPageName(page)
+        val indexPath = getIndexPageName(page)
+        val isSamePage = currentPath == getIndexPageName(page) ||
+               if(page == 0) false else currentPath.replace(".html","").contains(indexPath.replace(".html",""))
         return if(isSamePage){
             this.between(Tag.IF_CURRENT.open, Tag.IF_CURRENT.conditional!!)
         }else{
