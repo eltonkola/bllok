@@ -14,6 +14,8 @@ class BllokGenerator(val appData: AppData){
 
         //generate content
         generateIndex()
+        generateCategories()
+        generateArticles()
 
         //copy res folder
         File("${Bllok.templatePath}res").copyRecursively(File("${Bllok.outputPath}res"), true)
@@ -34,8 +36,8 @@ class BllokGenerator(val appData: AppData){
                     var currentArticle = template.replace(ContentTags.TITLE.tag, article.title)
                     currentArticle = currentArticle.replace(ContentTags.DESCRIPTION.tag, article.content.getSummary())
                     currentArticle = currentArticle.replace(ContentTags.PUB_DATE.tag, article.publicationDate.toReadableDate())
-                    currentArticle = currentArticle.replace(ContentTags.CATEGORY.tag, article.label.map { it.name }.joinToString())
-                    currentArticle = currentArticle.replace(ContentTags.HREF.tag, getArticlePageLink(article))
+                    currentArticle = currentArticle.replace(ContentTags.CATEGORY.tag, article.label.joinToString { it.name })
+                    currentArticle = currentArticle.replace(ContentTags.HREF.tag, getArticlePageName(article))
 
                     articlesContent += currentArticle
                 }
@@ -83,6 +85,101 @@ class BllokGenerator(val appData: AppData){
 
     }
 
+    private fun generateCategories(){
+        val indexTemplate = openFile("${Bllok.templatePath}category.html")
+        appData.labels.forEach { category ->
+
+            appData.articles.filter { it.label.contains(category) }
+                .chunked(appData.config.postsPerPage).forEachIndexed { index, list ->
+
+                val fileName = getCategoryPageName(index, category)
+                var pageContent = indexTemplate.generateCommonContent(fileName)
+
+
+                pageContent = pageContent.replace(ContentTags.CATEGORY.tag, category.name)
+                pageContent = pageContent.replace(ContentTags.DESCRIPTION.tag, category.description)
+
+                //render articles here
+                pageContent.findTagList(Tag.ARTICLES){ template ->
+                    //generate the categories menu code, based on the template
+                    var articlesContent = ""
+                    list.forEach { article ->
+                        var currentArticle = template.replace(ContentTags.TITLE.tag, article.title)
+                        currentArticle = currentArticle.replace(ContentTags.DESCRIPTION.tag, article.content.getSummary())
+                        currentArticle = currentArticle.replace(ContentTags.PUB_DATE.tag, article.publicationDate.toReadableDate())
+                        currentArticle = currentArticle.replace(ContentTags.CATEGORY.tag, article.label.map { it.name }.joinToString())
+                        currentArticle = currentArticle.replace(ContentTags.HREF.tag, getArticlePageName(article))
+
+                        articlesContent += currentArticle
+                    }
+
+                    pageContent = pageContent.replace(template, articlesContent)
+                }
+                //render pagination here
+                pageContent.findTagList(Tag.PAGING_PAGES){ template ->
+                    //we will render all
+                    var pagingContent = ""
+
+                    val nrPages = (appData.articles.size / appData.config.postsPerPage) - 1
+                    (0..nrPages).forEach {
+                        var menuItem = template.ifCurrentPageContent(fileName, it)
+                        menuItem = menuItem.replace(ContentTags.TEXT.tag, it.toString())
+                        menuItem = menuItem.replace(ContentTags.HREF.tag, getCategoryPageName(it, category))
+                        menuItem = menuItem.cleanTag(Tag.CATEGORIES)
+                        pagingContent += menuItem
+                    }
+
+                    pageContent = pageContent.replace(template, pagingContent)
+                }
+                //show next and previous page buttons
+                pageContent.findTagList(Tag.PREVIOUS_PAGE){ template ->
+                    //we will render all
+                    var pagingContent = ""
+                    if(index > 0){
+                        pagingContent += template.replace(ContentTags.HREF.tag, getCategoryPageName(index -1, category))
+                    }
+                    pageContent = pageContent.replace(template, pagingContent)
+                }
+
+                pageContent.findTagList(Tag.NEXT_PAGE){ template ->
+                    //we will render all
+                    val nrPages = (appData.articles.size / appData.config.postsPerPage) - 1
+                    var pagingContent = ""
+                    if(index < nrPages){
+                        pagingContent += template.replace(ContentTags.HREF.tag, getCategoryPageName(index + 1, category))
+                    }
+                    pageContent = pageContent.replace(template, pagingContent)
+                }
+
+                saveFile("${Bllok.outputPath}${fileName}", pageContent)
+            }
+        }
+
+    }
+
+    private fun generateArticles(){
+        val articleTemplate = openFile("${Bllok.templatePath}article.html")
+        appData.articles.forEach { article ->
+
+            val fileName = getArticlePageName(article)
+            var pageContent = articleTemplate.generateCommonContent(fileName)
+
+            pageContent = pageContent.replace(ContentTags.TITLE.tag, article.title)
+            pageContent = pageContent.replace(ContentTags.DESCRIPTION.tag, article.content.toHtml())
+            pageContent = pageContent.replace(ContentTags.PUB_DATE.tag, article.publicationDate.toReadableDate())
+            pageContent = pageContent.replace(ContentTags.CATEGORY.tag, article.label.joinToString { it.name })
+            pageContent = pageContent.replace(ContentTags.HREF.tag, getArticlePageName(article))
+
+            saveFile("${Bllok.outputPath}${fileName}", pageContent)
+        }
+
+    }
+
+
+
+
+
+
     private fun String.generateCommonContent(currentPath : String) : String {
 
         var pageContent = this
@@ -94,7 +191,7 @@ class BllokGenerator(val appData: AppData){
             appData.labels.forEach { category ->
                 var menuItem = template.ifCurrentCategoryPageContent(currentPath, category)
                 menuItem = menuItem.replace(ContentTags.TEXT.tag, category.name)
-                menuItem = menuItem.replace(ContentTags.HREF.tag, getCategoryPageName(1, category))
+                menuItem = menuItem.replace(ContentTags.HREF.tag, getCategoryPageName(0, category))
                 menuItem = menuItem.cleanTag(Tag.CATEGORIES)
                 menuContent += menuItem
             }

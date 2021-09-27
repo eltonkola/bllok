@@ -3,6 +3,9 @@ package com.eltonkola.bllok.generator
 import com.eltonkola.bllok.Bllok
 import com.eltonkola.bllok.data.model.Article
 import com.eltonkola.bllok.data.model.Label
+import org.intellij.markdown.flavours.commonmark.CommonMarkFlavourDescriptor
+import org.intellij.markdown.html.HtmlGenerator
+import org.intellij.markdown.parser.MarkdownParser
 import java.io.File
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -76,24 +79,12 @@ fun getIndexPageName(page: Int) : String {
     return if(page == 0) "index.html" else "index_${page + 1}.html"
 }
 
-fun getIndexPageLink(page: Int) : String {
-    return if(page == 0) "/index.html" else "/index_${page + 1}.html"
-}
-
 fun getCategoryPageName(page: Int, category:Label) : String {
     return if(page == 0) "tag_${category.name.cleanForUrl()}.html" else "tag_${category.name.cleanForUrl()}_${page+1}.html"
 }
 
-fun getCategoryPageLink(page: Int, category:Label) : String {
-    return if(page == 0) "/tag_${category.name.cleanForUrl()}.html" else "/tag_${category.name.cleanForUrl()}_${page+1}.html"
-}
-
 fun getArticlePageName(article: Article) : String {
     return "read_${article.title.cleanForUrl()}.html"
-}
-
-fun getArticlePageLink(article: Article) : String {
-    return "/read_${article.title.cleanForUrl()}.html"
 }
 
 fun String.cleanForUrl() : String {
@@ -107,6 +98,16 @@ fun String.getSummary() : String {
         this
     }
 }
+
+fun String.toHtml() : String {
+    val flavour = CommonMarkFlavourDescriptor()
+    val parsedTree = MarkdownParser(flavour).buildMarkdownTreeFromString(this)
+    return HtmlGenerator(this, parsedTree, flavour).generateHtml()
+}
+
+
+
+
 fun LocalDate.toReadableDate() : String {
     var formatter = DateTimeFormatter.ofPattern("dd-MMMM-yyyy")//"yyyy-MM-dd HH:mm:ss"
     return formatter.format(this)

@@ -17,7 +17,7 @@ dependencies {
 
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation( "com.squareup.retrofit2:converter-gson:2.9.0")
-
+    implementation ("org.jetbrains:markdown:0.1.45")
 
 
     testImplementation(kotlin("test"))
