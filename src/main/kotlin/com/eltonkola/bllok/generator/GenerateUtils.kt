@@ -6,14 +6,15 @@ import com.eltonkola.bllok.data.model.Label
 import java.io.File
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
-import java.util.*
 
 enum class Tag(val open: String, val close: String, val conditional: String? = null){
     INCLUDE("<include>","</include>"),
     ARTICLES("<articles>","</articles>"),
     CATEGORIES("<categories>","</categories>"),
     PAGING_PAGES("<paging>","</paging>"),
-    IF_CURRENT("<ifCurrent>", "</ifCurrent>","<else>")
+    IF_CURRENT("<ifCurrent>", "</ifCurrent>","<else>"),
+    PREVIOUS_PAGE("<prev>","</prev>"),
+    NEXT_PAGE("<next>","</next>"),
 }
 
 enum class ContentTags(val tag: String){

@@ -25,8 +25,8 @@ class BllokGenerator(val appData: AppData){
         appData.articles.chunked(appData.config.postsPerPage).forEachIndexed { index, list ->
             val fileName = getIndexPageName(index)
             var pageContent = indexTemplate.generateCommonContent(fileName)
-            //TODO - render articles here
 
+            //render articles here
             pageContent.findTagList(Tag.ARTICLES){ template ->
                 //generate the categories menu code, based on the template
                 var articlesContent = ""
@@ -42,9 +42,41 @@ class BllokGenerator(val appData: AppData){
 
                 pageContent = pageContent.replace(template, articlesContent)
             }
+            //render pagination here
+            pageContent.findTagList(Tag.PAGING_PAGES){ template ->
+                //we will render all
+                var pagingContent = ""
 
+                val nrPages = (appData.articles.size / appData.config.postsPerPage) - 1
+                (0..nrPages).forEach {
+                    var menuItem = template.ifCurrentPageContent(fileName, it)
+                    menuItem = menuItem.replace(ContentTags.TEXT.tag, it.toString())
+                    menuItem = menuItem.replace(ContentTags.HREF.tag, getIndexPageName(it))
+                    menuItem = menuItem.cleanTag(Tag.CATEGORIES)
+                    pagingContent += menuItem
+                }
 
-            //TODO - render pagination here
+                pageContent = pageContent.replace(template, pagingContent)
+            }
+            //show next and previous page buttons
+            pageContent.findTagList(Tag.PREVIOUS_PAGE){ template ->
+                //we will render all
+                var pagingContent = ""
+                if(index > 0){
+                    pagingContent += template.replace(ContentTags.HREF.tag, getIndexPageName(index -1))
+                }
+                pageContent = pageContent.replace(template, pagingContent)
+            }
+
+            pageContent.findTagList(Tag.NEXT_PAGE){ template ->
+                //we will render all
+                val nrPages = (appData.articles.size / appData.config.postsPerPage) - 1
+                var pagingContent = ""
+                if(index < nrPages){
+                    pagingContent += template.replace(ContentTags.HREF.tag, getIndexPageName(index + 1))
+                }
+                pageContent = pageContent.replace(template, pagingContent)
+            }
 
             saveFile("${Bllok.outputPath}${fileName}", pageContent)
         }
@@ -60,7 +92,7 @@ class BllokGenerator(val appData: AppData){
             //generate the categories menu code, based on the template
             var menuContent = ""
             appData.labels.forEach { category ->
-                var menuItem = template.ifCurrentPageContent(currentPath, category)
+                var menuItem = template.ifCurrentCategoryPageContent(currentPath, category)
                 menuItem = menuItem.replace(ContentTags.TEXT.tag, category.name)
                 menuItem = menuItem.replace(ContentTags.HREF.tag, getCategoryPageName(1, category))
                 menuItem = menuItem.cleanTag(Tag.CATEGORIES)
@@ -78,11 +110,23 @@ class BllokGenerator(val appData: AppData){
         return pageContent
     }
 
-    private fun String.ifCurrentPageContent(currentPath : String, category: Label) : String {
+    private fun String.ifCurrentCategoryPageContent(currentPath : String, category: Label) : String {
         if(!this.contains(Tag.IF_CURRENT.open)){
             return this
         }
         val isSamePage = currentPath == getCategoryPageName(1, category)
+        return if(isSamePage){
+            this.between(Tag.IF_CURRENT.open, Tag.IF_CURRENT.conditional!!)
+        }else{
+            this.between(Tag.IF_CURRENT.conditional!!, Tag.IF_CURRENT.close)
+        }
+    }
+
+    private fun String.ifCurrentPageContent(currentPath : String, page: Int) : String {
+        if(!this.contains(Tag.IF_CURRENT.open)){
+            return this
+        }
+        val isSamePage = currentPath == getIndexPageName(page)
         return if(isSamePage){
             this.between(Tag.IF_CURRENT.open, Tag.IF_CURRENT.conditional!!)
         }else{
