@@ -1,13 +1,19 @@
 package com.eltonkola.bllok.generator
 
 import com.eltonkola.bllok.Bllok
+import com.eltonkola.bllok.data.model.Article
+import com.eltonkola.bllok.data.model.Label
 import java.io.File
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.util.*
 
-enum class Tag(val open: String, val close: String){
+enum class Tag(val open: String, val close: String, val conditional: String? = null){
     INCLUDE("<include>","</include>"),
     ARTICLES("<articles>","</articles>"),
     CATEGORIES("<categories>","</categories>"),
     PAGING_PAGES("<paging>","</paging>"),
+    IF_CURRENT("<ifCurrent>", "</ifCurrent>","<else>")
 }
 
 enum class ContentTags(val tag: String){
@@ -24,7 +30,7 @@ fun saveFile(fileName: String, fileContent: String){
 }
 
 fun cleanDirectory(fileName: String){
-    var dir = File(fileName)
+    val dir = File(fileName)
     dir.deleteRecursively()
     dir.mkdirs()
 }
@@ -47,15 +53,61 @@ fun openFile(fileName: String) : String {
 fun String.cleanTag(tag: Tag) : String {
     var text = this.replace(tag.open, "")
     text = text.replace(tag.close, "")
+    tag.conditional?.let{
+        text = text.replace(it, "")
+    }
     return text
 }
 
 fun String.findTagList(tag: Tag, onMatch : (String) -> Unit){
-    val regex = "${tag.open}(.*?)${tag.close}".toRegex(RegexOption.MULTILINE)
+    val regex = "${tag.open}(.*?)${tag.close}".toRegex(RegexOption.DOT_MATCHES_ALL)
     val matchResult = regex.findAll(this)
     if(matchResult.toList().isNotEmpty()){
-        matchResult.map {it.groups[1]!!.value}.forEach {
+        matchResult.map {it.groups[0]!!.value}.forEach {
             onMatch(it)
         }
+    }else{
+        println("no matches for $tag")
     }
 }
+
+fun getIndexPageName(page: Int) : String {
+    return if(page == 0) "index.html" else "index_${page + 1}.html"
+}
+
+fun getIndexPageLink(page: Int) : String {
+    return if(page == 0) "/index.html" else "/index_${page + 1}.html"
+}
+
+fun getCategoryPageName(page: Int, category:Label) : String {
+    return if(page == 0) "tag_${category.name.cleanForUrl()}.html" else "tag_${category.name.cleanForUrl()}_${page+1}.html"
+}
+
+fun getCategoryPageLink(page: Int, category:Label) : String {
+    return if(page == 0) "/tag_${category.name.cleanForUrl()}.html" else "/tag_${category.name.cleanForUrl()}_${page+1}.html"
+}
+
+fun getArticlePageName(article: Article) : String {
+    return "read_${article.title.cleanForUrl()}.html"
+}
+
+fun getArticlePageLink(article: Article) : String {
+    return "/read_${article.title.cleanForUrl()}.html"
+}
+
+fun String.cleanForUrl() : String {
+    return this.replace(" ", "_")
+}
+
+fun String.getSummary() : String {
+    return if(this.length > 50){
+        this.substring(0, 50)
+    }else{
+        this
+    }
+}
+fun LocalDate.toReadableDate() : String {
+    var formatter = DateTimeFormatter.ofPattern("dd-MMMM-yyyy")//"yyyy-MM-dd HH:mm:ss"
+    return formatter.format(this)
+}
+

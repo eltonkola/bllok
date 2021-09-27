@@ -36,6 +36,7 @@ class DataManager {
         return AppData(
             articles = allArticles,
             config = config,
+            labels = allArticles.flatMap { it.label }.distinct()
         )
     }
 

@@ -18,11 +18,11 @@ class Bllok(
     }
 
     private val dataManager = DataManager()
-    private val generator = BllokGenerator()
 
     fun execute(){
         val appData = dataManager.loadAppData()
-        generator.generate(appData)
+        val generator = BllokGenerator(appData)
+        generator.generate()
     }
 
 }

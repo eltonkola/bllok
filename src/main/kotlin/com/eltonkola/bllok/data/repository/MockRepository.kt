@@ -3,6 +3,9 @@ package com.eltonkola.bllok.data.repository
 import com.eltonkola.bllok.data.model.Article
 import com.eltonkola.bllok.data.model.Author
 import com.eltonkola.bllok.data.model.Config
+import com.eltonkola.bllok.data.model.Label
+import java.time.Instant
+import java.time.LocalDate
 import java.util.*
 
 class MockRepository : DataRepository {
@@ -13,7 +16,7 @@ class MockRepository : DataRepository {
         }
         return (1..50).map {
             Article(
-                title = "",
+                title = "Article $it",
                 content = "An h1 header\n" +
                         "============\n" +
                         "\n" +
@@ -193,13 +196,22 @@ class MockRepository : DataRepository {
 //                        "totam ratione voluptas quod exercitationem fuga. Possimus quis earum veniam \n" +
 //                        "quasi aliquam eligendi, placeat qui corporis!"
                 ,
-                publicationDate = Date(),
-                updateDate = Date(),
+                publicationDate = LocalDate.now(), //LocalDate.parse("2011-04-10T20:09:31Z"),
+                updateDate = LocalDate.now(), //LocalDate.parse("2010-04-10T20:09:31Z"),
                 author = Author(
                     username = "eltonkola",
                     avatarUrl = "http",
                     githubLink = "http://eltonkola.dev/",
                 ),
+                label = (0..5).map {
+                    Label(
+                        id = it,
+                        name = "Category $it",
+                        description = " Description category $it",
+                        color = "#336699",
+                        default = false,
+                    )
+                }
             )
         }
     }
