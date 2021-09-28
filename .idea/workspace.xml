@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="156d3767-6ff7-4248-8194-7eebd0b8fef6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/eltonkola/bllok/generator/RssFeedGenerator.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/eltonkola/bllok/Bllok.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/eltonkola/bllok/Bllok.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/eltonkola/bllok/data/model/LocalModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/eltonkola/bllok/data/model/LocalModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/eltonkola/bllok/data/repository/MockRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/eltonkola/bllok/data/repository/MockRepository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/eltonkola/bllok/generator/BllokGenerator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/eltonkola/bllok/generator/BllokGenerator.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/eltonkola/bllok/generator/GenerateUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/eltonkola/bllok/generator/GenerateUtils.kt" afterDir="false" />
@@ -62,6 +65,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -85,6 +89,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />

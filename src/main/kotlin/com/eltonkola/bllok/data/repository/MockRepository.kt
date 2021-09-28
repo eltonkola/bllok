@@ -6,6 +6,8 @@ import com.eltonkola.bllok.data.model.Config
 import com.eltonkola.bllok.data.model.Label
 import java.time.Instant
 import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.ZonedDateTime
 import java.util.*
 
 class MockRepository : DataRepository {
@@ -52,6 +54,7 @@ class MockRepository : DataRepository {
 
     private val articles = listOf(
         Article(
+            id = 1,
             title = "Article 1",
             content = "An h1 header\n" +
                     "============\n" +
@@ -211,12 +214,13 @@ class MockRepository : DataRepository {
                     "And note that you can backslash-escape any punctuation characters\n" +
                     "which you wish to be displayed literally, ex.: \\`foo\\`, \\*bar\\*, etc."
             ,
-            publicationDate = LocalDate.now(),
-            updateDate = LocalDate.now(),
+            publicationDate = ZonedDateTime.now(),
+            updateDate = ZonedDateTime.now(),
             author = elton,
             label = listOf(categories.random())
         ),
         Article(
+            id = 2,
             title = "Article 2",
             content =
                         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\n" +
@@ -241,8 +245,8 @@ class MockRepository : DataRepository {
                         "totam ratione voluptas quod exercitationem fuga. Possimus quis earum veniam \n" +
                         "quasi aliquam eligendi, placeat qui corporis!"
             ,
-            publicationDate = LocalDate.now(),
-            updateDate = LocalDate.now(),
+            publicationDate = ZonedDateTime.now(),
+            updateDate = ZonedDateTime.now(),
             author = elton,
             label = listOf(categories.random())
         )
@@ -253,9 +257,7 @@ class MockRepository : DataRepository {
         if(page > 1){
             return emptyList()
         }
-        return (1..50).map {
-            articles.random()
-        }
+        return articles
     }
 
     override fun getConfig(): Config {

@@ -8,6 +8,8 @@ import org.intellij.markdown.html.HtmlGenerator
 import org.intellij.markdown.parser.MarkdownParser
 import java.io.File
 import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
 
@@ -109,7 +111,7 @@ fun String.toHtml() : String {
 
 
 
-fun LocalDate.toReadableDate() : String {
+fun ZonedDateTime.toReadableDate() : String {
     var formatter = DateTimeFormatter.ofPattern("dd-MMMM-yyyy")//"yyyy-MM-dd HH:mm:ss"
     return formatter.format(this)
 }

@@ -1,13 +1,16 @@
 package com.eltonkola.bllok.data.model
 
 import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.ZonedDateTime
 
 
 data class Article(
+    val id : Int,
     val title: String,
     val content: String,
-    val publicationDate: LocalDate,
-    val updateDate: LocalDate,
+    val publicationDate: ZonedDateTime,
+    val updateDate: ZonedDateTime,
     val author: Author,
     val label: List<Label>,
 )
@@ -35,4 +38,11 @@ data class AppData(
 data class Config(
     val postsPerPage: Int = 10,
     val twitter: String = "@eltonkola",
+    val webUrl: String = "https://eltonkola.github.io/bllok/",
+    val websiteName: String = "Bllok",
+    val websiteDescription: String = "another static blog",
+    val copyright: String = "2021 eKola",
+    val feedEmail: String = "ihrkola@gmail.com",
+    val feedEmailRealName: String = "Elton Kola"
+
 )

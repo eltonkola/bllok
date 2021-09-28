@@ -11,6 +11,8 @@ class Bllok(
     companion object{
         lateinit var templatePath : String
         lateinit var outputPath : String
+
+        const val version = "1.0"
     }
     init{
         Bllok.templatePath = templatePath

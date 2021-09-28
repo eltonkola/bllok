@@ -17,6 +17,9 @@ class BllokGenerator(val appData: AppData){
         generateCategories()
         generateArticles()
 
+        //generate rss
+        RssFeedGenerator().generateRssFeed(appData)
+
         //copy res folder
         File("${Bllok.templatePath}res").copyRecursively(File("${Bllok.outputPath}res"), true)
 
