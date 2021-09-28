@@ -30,6 +30,17 @@ enum class ContentTags(val tag: String){
     HREF("\$href"),
     PUB_DATE("\$pub_date"),
     CATEGORY("\$category"),
+
+    HEADER_TITLE("\$header_title"),
+    HEADER_CREATOR("\$header_creator"),
+    HEADER_DESCRIPTION("\$header_description"),
+    HEADER_URL("\$header_url"),
+    HEADER_PERPAGE("\$header_past_per_page"),
+
+    FOOTER_TWITTER("\$footer_twitter_link"),
+    FOOTER_GITHUB("\$footer_github_link"),
+    FOOTER_COPYRIGHT("\$footer_copyright"),
+
 }
 
 fun saveFile(fileName: String, fileContent: String){

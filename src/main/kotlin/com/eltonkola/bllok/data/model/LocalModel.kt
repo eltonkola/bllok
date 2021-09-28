@@ -37,12 +37,13 @@ data class AppData(
 
 data class Config(
     val postsPerPage: Int = 10,
-    val twitter: String = "@eltonkola",
+    val twitter: String = "http://twitter.com/eltonkola",
+    val github: String = "http://github.com/eltonkola",
     val webUrl: String = "https://eltonkola.github.io/bllok/",
     val websiteName: String = "Bllok",
     val websiteDescription: String = "another static blog",
     val copyright: String = "2021 eKola",
-    val feedEmail: String = "ihrkola@gmail.com",
+    val feedEmail: String = "eltonkola@gmail.com",
     val feedEmailRealName: String = "Elton Kola"
 
 )

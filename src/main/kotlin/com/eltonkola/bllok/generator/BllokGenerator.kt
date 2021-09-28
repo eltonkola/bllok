@@ -203,9 +203,17 @@ class BllokGenerator(val appData: AppData){
             pageContent = pageContent.replace(template, menuContent)
         }
 
-        //TODO - header metadata
+        //header metadata
+        pageContent = pageContent.replace(ContentTags.HEADER_TITLE.tag, appData.config.websiteName)
+        pageContent = pageContent.replace(ContentTags.HEADER_CREATOR.tag, appData.config.feedEmailRealName)
+        pageContent = pageContent.replace(ContentTags.HEADER_DESCRIPTION.tag, appData.config.websiteDescription)
+        pageContent = pageContent.replace(ContentTags.HEADER_URL.tag, appData.config.webUrl)
+        pageContent = pageContent.replace(ContentTags.HEADER_PERPAGE.tag, appData.config.postsPerPage.toString())
 
         //TODO - footer icons and copyright
+        pageContent = pageContent.replace(ContentTags.FOOTER_TWITTER.tag, appData.config.twitter)
+        pageContent = pageContent.replace(ContentTags.FOOTER_GITHUB.tag, appData.config.github)
+        pageContent = pageContent.replace(ContentTags.FOOTER_COPYRIGHT.tag, appData.config.copyright)
 
         return pageContent
     }
