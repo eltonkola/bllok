@@ -11,8 +11,8 @@ jobs:
         uses: eltonkola/bllok@0.0.2
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          githubOwner: ${{ github.event.repository.owner }}
-          githubRepo: ${{ github.event.repository.name }}
+          githubOwner: ${{ github.repository.owner }}
+          githubRepo: ${{ github.repository.name }}
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
