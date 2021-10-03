@@ -2,15 +2,25 @@
 name: 'Bllok'
 description: 'Generate a blog from github issues'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  githubToken:  # your github developer token
+    description: 'your github developer token'
     required: true
-    default: 'World'
+    default: ''
+  githubOwner:  # your github username
+    description: 'your github username'
+    required: true
+    default: ''
+  githubRepo:  # your github repo
+    description: 'your github repo'
+    required: true
+    default: ''
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  bllok-status: # id of output
+    description: 'The status of the job'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.githubToken }}
+    - ${{ inputs.githubOwner }}
+    - ${{ inputs.githubRepo }}
