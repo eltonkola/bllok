@@ -8,9 +8,11 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: actions/BllokHub@v1
+        uses: eltonkola/bllok@0.0.2
         with:
-          who-to-greet: 'Mona the Octocat'
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          githubWoner: ${{ github.event.repository.owner }}
+          githubRepo: ${{ github.event.repository.name }}
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
