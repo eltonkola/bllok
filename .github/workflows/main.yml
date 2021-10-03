@@ -1,18 +1,18 @@
-name: BuildPodcast
+rname: GenerateBlog
 on:
   workflow_dispatch:
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Generate website from issues
     steps:
-      - name: Hello world action step
-        id: hello
+      - name: Generate
+        id: generate
         uses: eltonkola/bllok@0.0.2
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           githubOwner: ${{ github.repository.owner }}
           githubRepo: ${{ github.repository.name }}
       # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+      - name: Get the output status
+        run: echo "The status was ${{ steps.generate.outputs.bllok-status }}"
