@@ -11,7 +11,7 @@ jobs:
         uses: eltonkola/bllok@0.0.2
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          githubWoner: ${{ github.event.repository.owner }}
+          githubOwner: ${{ github.event.repository.owner }}
           githubRepo: ${{ github.event.repository.name }}
       # Use the output from the `hello` step
       - name: Get the output time
