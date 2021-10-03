@@ -1,6 +1,9 @@
 # action.yml
-name: 'Bllok'
+name: 'BllokHub'
 description: 'Generate a blog from github issues'
+branding:
+  icon: 'align-left'
+  color: 'red'
 inputs:
   githubToken:  # your github developer token
     description: 'your github developer token'
