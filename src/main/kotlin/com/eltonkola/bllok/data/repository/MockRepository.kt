@@ -20,28 +20,28 @@ class MockRepository : DataRepository {
 
     private val categories = listOf(
         Label(
-            id = 1,
+            id = "1",
             name = "Java",
             description = "Description category java",
             color = "#336699",
             default = false,
         ),
         Label(
-            id = 1,
+            id = "2",
             name = "Kotlin",
             description = "Description category kotlin",
             color = "#336699",
             default = false,
         ),
         Label(
-            id = 1,
+            id = "3",
             name = "Web",
             description = "Description category web",
             color = "#336699",
             default = false,
         ),
         Label(
-            id = 1,
+            id = "41",
             name = "Other",
             description = "Description category other",
             color = "#336699",
@@ -253,14 +253,14 @@ class MockRepository : DataRepository {
     )
 
 
-    override fun getArticles(page: Int): List<Article> {
+    override suspend fun getArticles(page: Int): List<Article> {
         if(page > 1){
             return emptyList()
         }
         return articles
     }
 
-    override fun getConfig(): Config {
+    override suspend fun getConfig(): Config {
         return Config()
     }
 

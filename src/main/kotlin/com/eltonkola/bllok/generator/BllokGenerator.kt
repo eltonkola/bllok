@@ -168,10 +168,9 @@ class BllokGenerator(val appData: AppData){
             var pageContent = articleTemplate.generateCommonContent(fileName)
 
             pageContent = pageContent.replace(ContentTags.TITLE.tag, article.title)
-            pageContent = pageContent.replace(ContentTags.DESCRIPTION.tag, article.content.toHtml())
+            pageContent = pageContent.replace(ContentTags.TEXT.tag, article.content.toHtml())
             pageContent = pageContent.replace(ContentTags.PUB_DATE.tag, article.publicationDate.toReadableDate())
             pageContent = pageContent.replace(ContentTags.CATEGORY.tag, article.label.joinToString { it.name })
-            pageContent = pageContent.replace(ContentTags.HREF.tag, getArticlePageName(article))
 
             saveFile("${Bllok.outputPath}${fileName}", pageContent)
         }

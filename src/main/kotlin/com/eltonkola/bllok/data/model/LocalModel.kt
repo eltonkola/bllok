@@ -1,7 +1,5 @@
 package com.eltonkola.bllok.data.model
 
-import java.time.LocalDate
-import java.time.LocalDateTime
 import java.time.ZonedDateTime
 
 
@@ -22,7 +20,7 @@ data class Author(
 )
 
 data class Label(
-    val id: Int,
+    val id: String,
     val name: String,
     val description: String,
     val color: String,
@@ -45,5 +43,4 @@ data class Config(
     val copyright: String = "2021 eKola",
     val feedEmail: String = "eltonkola@gmail.com",
     val feedEmailRealName: String = "Elton Kola"
-
 )

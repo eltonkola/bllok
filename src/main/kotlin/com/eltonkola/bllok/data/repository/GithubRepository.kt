@@ -1,7 +1,9 @@
 package com.eltonkola.bllok.data.repository
 
+import com.eltonkola.bllok.Bllok
 import com.eltonkola.bllok.data.model.Article
 import com.eltonkola.bllok.data.model.Config
+import com.eltonkola.bllok.data.model.toArticle
 import com.eltonkola.bllok.data.service.GithubAPI
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -16,12 +18,15 @@ class GithubRepository : DataRepository {
 
     var service: GithubAPI = retrofit.create(GithubAPI::class.java)
 
-    //TODO - this will get the list of issues from github api
-    override fun getArticles(page: Int): List<Article> {
-        return emptyList()
+    override suspend fun getArticles(page: Int): List<Article> {
+        val issues = service.getIssues(Bllok.githubToken, Bllok.owner, Bllok.repo, page, 100)
+        println("issues: ${issues.size} pages: $page")
+        return issues.map {
+             it.toArticle()
+        }
     }
 
-    override fun getConfig(): Config {
+    override suspend fun getConfig(): Config {
         return Config()
     }
 

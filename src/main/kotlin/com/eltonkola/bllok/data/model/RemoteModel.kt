@@ -1,10 +1,74 @@
 package com.eltonkola.bllok.data.model
 
+import java.time.ZonedDateTime
+
+
 data  class GithubIssue(
     val id: Int,
     val title: String,
     val body: String,
+    val user: Author,
+    val labels: List<Label>,
 )
+
+
+/*
+[
+  {
+
+    "user": {
+      "login": "octocat",
+      "id": 1,
+      "node_id": "MDQ6VXNlcjE=",
+      "avatar_url": "https://github.com/images/error/octocat_happy.gif",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/octocat",
+      "html_url": "https://github.com/octocat",
+      "followers_url": "https://api.github.com/users/octocat/followers",
+      "following_url": "https://api.github.com/users/octocat/following{/other_user}",
+      "gists_url": "https://api.github.com/users/octocat/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/octocat/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/octocat/subscriptions",
+      "organizations_url": "https://api.github.com/users/octocat/orgs",
+      "repos_url": "https://api.github.com/users/octocat/repos",
+      "events_url": "https://api.github.com/users/octocat/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/octocat/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "id": 208045946,
+        "node_id": "MDU6TGFiZWwyMDgwNDU5NDY=",
+        "url": "https://api.github.com/repos/octocat/Hello-World/labels/bug",
+        "name": "bug",
+        "description": "Something isn't working",
+        "color": "f29513",
+        "default": true
+      }
+    ],
+    "comments": 0,
+    "created_at": "2011-04-22T13:33:48Z",
+    "updated_at": "2011-04-22T13:33:48Z",
+  }
+]
+*/
+
+fun GithubIssue.toArticle() : Article {
+    return Article(
+        id = this.id,
+        title = this.title,
+        content = this.body,
+        publicationDate = ZonedDateTime.now(),
+        updateDate = ZonedDateTime.now(),
+        author = this.user,
+        label = this.labels,
+    )
+}
+
+
+
+
 
 /*
 [
