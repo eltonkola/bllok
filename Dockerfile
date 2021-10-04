@@ -3,7 +3,6 @@ FROM openjdk:11-jdk
 COPY . /src
 WORKDIR /src
 RUN ./gradlew build
-COPY . /template
 
 COPY build/libs/bllok-1.0-SNAPSHOT.jar /bin/runner/run.jar
 WORKDIR /bin/runner
