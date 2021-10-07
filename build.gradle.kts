@@ -37,10 +37,26 @@ application {
 
 tasks {
     withType<Jar> {
+
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
         manifest {
             attributes["Main-Class"] = application.mainClassName
         }
         // here zip stuff found in runtimeClasspath:
-        from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
+        from(configurations.runtimeClasspath.get().map {
+            if (it.isDirectory) {
+                it
+            } else {
+                zipTree(it)
+            }
+        })
+
+//        configurations["compileClasspath"].forEach { file: File ->
+//            from(zipTree(file.absoluteFile))
+//        }
+
+
     }
 }
+
