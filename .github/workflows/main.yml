@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Generate
         id: generate
-        uses: eltonkola/bllok@0.0.12
+        uses: eltonkola/bllok@0.0.13
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           githubOwner: ${{ github.repository.owner }}
