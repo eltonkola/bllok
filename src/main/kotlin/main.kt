@@ -1,29 +1,16 @@
-import com.eltonkola.bllok.Bllok
-import java.time.Instant
-import kotlin.system.exitProcess
+package com.eltonkola
 
-fun main(args: Array<String>) {
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+fun main() {
+    val name = "Kotlin"
+    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
+    // to see how IntelliJ IDEA suggests fixing it.
+    println("Hello, " + name + "!")
 
-    val startedAt = Instant.now()
-    println("Bllok start!")
-    if(args.size == 5) {
-        val templatePath = args[0]
-        val outputPath = args[1]
-        val githubToken = args[2]
-        val owner = args[3]
-        val repo = args[4]
-        println("templatePath: $templatePath")
-        println("outputPath: $outputPath")
-        println("githubToken: $githubToken")
-        println("owner: $owner")
-        println("repo: $repo")
-        Bllok(templatePath, outputPath, githubToken, owner, repo).execute()
-    }else{
-        println("!!! please pass the template and output path sa parameters !!!")
-        exitProcess(1)
+    for (i in 1..5) {
+        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
+        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
+        println("i = $i")
     }
-    println("Bllok end!")
-    println("Executed in: ${Instant.now().toEpochMilli() - startedAt.toEpochMilli() } millisec!")
-    exitProcess(0)
 }
-
