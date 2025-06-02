@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+<title>Letersia shqiptare</title>
+<link>https://localhost:8000</link>
+<description>Letersia nga fajtori web</description>
+<language>en-us</language>
+<lastBuildDate>Sun, 1 Jun 2025 22:44:22 -0400</lastBuildDate>
+<docs>https://www.rssboard.org/rss-specification</docs>
+<generator>Simple Kotlin RSS Generator</generator>
+<item>
+<title>Hyrje</title>
+<description>Në fillimet e letërsisë shqiptare janë veprat e Marin Barletit (&quot;Historia e Skënder-beut&quot;, 1508) dhe të humanistëve të tjerë, të botuara latinisht. Libri i parë shqip është &quot;Me-shari&quot; (1555) i Gjon Buzukut. Letërsia e vjetër përfaqësohet nga vepra fetare, por që ishin shpre-hje e qëndresës kundër...</description>
+<link>https://localhost:8000/Hyrje.md</link>
+<pubDate>Sun, 1 Jun 2025 22:44:22 -0400</pubDate>
+</item>
+<item>
+<title>Hyrje</title>
+<description>Letërsia e vjetër shqiptare lindi dhe u zhvillua në mesjetë, kur vendi ynë nën zgjedhën osmane, në kushtet e shoqërisë feudale, ku ideologjia sunduese ishte ideologjia fetare. Prandaj edhe përmbajtja e saj është kryesisht fetare. Të nisur nisur nga qëllime atdhetare, shkrimtarët e kësaj periudhe...</description>
+<link>https://localhost:8000/Hyrje.md</link>
+<pubDate>Sun, 1 Jun 2025 22:44:22 -0400</pubDate>
+</item>
+<item>
+<title>Marin Barleti</title>
+<description>Historiani i shquar Marin Barleti është figura më e madhe e lëvizjes së humanistëve shqiptarë të shekujve XV-XVI. Ai lindi rreth vitit 1460 në Shkodër. Fare i ri, më 1478, mori pjesë me armë në luftën për mbrojtjen e qytetit të lindjes nga rrethimi i forcave osmane. Heroizmi i bashkatdhetarëve i...</description>
+<link>https://localhost:8000/Marin Barleti.md</link>
+<pubDate>Sun, 1 Jun 2025 22:44:22 -0400</pubDate>
+</item>
+<item>
+<title>Gjon Buzuku</title>
+<description>Gjon Buzuku është autori i parë i njohur deri më sot i letërsisë shqiptare. Veprat në gjuhën shqipe gjatë shekujve të parë të pushtimit osman janë të pakta. Më e vjetra prej tyre që ka mbëritur deri në ditët tona, është &quot;Meshari„ i Gjon Buzukut (1555). Kush ishte autori, nga ishte, ku punoi, mbi...</description>
+<link>https://localhost:8000/Gjon Buzuku.md</link>
+<pubDate>Sun, 1 Jun 2025 22:44:22 -0400</pubDate>
+</item>
+<item>
+<title>Pjetër Bogdani</title>
+<description>Pjetër Bogdani është figura më e shquar e letërsisë së vjetër shqiptare. Ai shquhet jo vetëm si klerik i lartë, por edhe si atdhetar, me një dashuri të pakufi për gjuhën shqipe e për popullin shqiptar, por edhe si dijetar e letrar, si luftëtar i paepur për çlirimin e vendit nga zgjedha osmane dhe...</description>
+<link>https://localhost:8000/Pjetër Bogdani.md</link>
+<pubDate>Sun, 1 Jun 2025 22:44:22 -0400</pubDate>
+</item>
+<item>
+<title>Pjetër Budi</title>
+<description>Pjetër Budi është një nga figurat më të shquara të botës shqiptare për kohën kur jetoi. Ai u përket atyre klerikëve, që u dalluan për një veprimtari të dendur atdhetare. Ishte organizator dhe udhëheqës i masave popullore në luftën për çlirim nga zgjedha osmane, përkthyes dhe krijues origjinal në...</description>
+<link>https://localhost:8000/Pjetër Budi.md</link>
+<pubDate>Sun, 1 Jun 2025 22:44:22 -0400</pubDate>
+</item>
+<item>
+<title>Frang Bardhi</title>
+<description>Autori i tretë i rëndësishëm i letërsisë së vjetër shqiptare është Frang Bardhi. Midis autorëve të tjerë të kësaj periudhe, Bardhi zë një vend të vecantë. Duke ndjekur vazhdën e paraardhësve në veprimtarinë atdhetare, në fushën e krijimtarisë letrare i kalon caqet e përkthimeve fetare. Ai kishte...</description>
+<link>https://localhost:8000/Frang Bardhi.md</link>
+<pubDate>Sun, 1 Jun 2025 22:44:22 -0400</pubDate>
+</item>
+<item>
+<title>Hyrje</title>
+<description>Në shekullin XVIII në Shqipëri lindi dhe u zhvillua një rrymë letrare me tipare tepër origjinale për vendin tonë, rryma e bejtexhinjve (nga fjala turke &lt;&lt;bejte&gt;&gt; - vjershë). Ajo u bë dukuri e rëndësishme dhe pati përhapje shumë të gjerë në qytete të ndryshme të Shqipërisë, në Kosovë, por edhe ne...</description>
+<link>https://localhost:8000/Hyrje.md</link>
+<pubDate>Sun, 1 Jun 2025 22:44:22 -0400</pubDate>
+</item>
+<item>
+<title>Nezim Frakulla</title>
+<description>Nezim Frakulla (ose Nezim Berati) është nga autorët e parë të rëndësishëm të letërsisë shqiptare me alfabet arab; në mjediset ku jetoi e krijoi, luajti rol në zhvillimin e kësaj rryme.
+Nezimi lindi nga fundi i shekullit XVII në fashtin Frakull të Fierit në një familje të vogël feudale. Që i ri...</description>
+<link>https://localhost:8000/Nezim Frakulla.md</link>
+<pubDate>Sun, 1 Jun 2025 22:44:22 -0400</pubDate>
+</item>
+</channel>
+</rss>

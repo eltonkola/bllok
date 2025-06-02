@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+<title>My Blog</title>
+<link>https://example.com</link>
+<description>Latest posts from My Blog</description>
+<language>en-us</language>
+<lastBuildDate>Sun, 1 Jun 2025 22:34:10 -0400</lastBuildDate>
+<docs>https://www.rssboard.org/rss-specification</docs>
+<generator>Simple Kotlin RSS Generator</generator>
+<item>
+<title>Hello World</title>
+<description>This is my first post!</description>
+<link>https://example.com/hello-world</link>
+<pubDate>Sun, 1 Jun 2025 22:34:10 -0400</pubDate>
+</item>
+<item>
+<title>Second Post</title>
+<description>Here&apos;s another post.</description>
+<link>https://example.com/second-post</link>
+<pubDate>Sun, 1 Jun 2025 22:34:10 -0400</pubDate>
+</item>
+</channel>
+</rss>
