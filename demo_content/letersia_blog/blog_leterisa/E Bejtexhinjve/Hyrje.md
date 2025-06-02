@@ -1,0 +1,24 @@
+Në shekullin XVIII në Shqipëri lindi dhe u zhvillua një rrymë letrare me tipare tepër origjinale për vendin tonë, rryma e bejtexhinjve (nga fjala turke <<bejte>> - vjershë). Ajo u bë dukuri e rëndësishme dhe pati përhapje shumë të gjerë në qytete të ndryshme të Shqipërisë, në Kosovë, por edhe ne qendra më të vogla fetare e më pak në fshat.
+Rryma letrare e bejtexhinjve ishte produkt i disa kushteve të veçanta historike, i dy palë faktorëve të kundërt.
+Nga njëra anë ishte kërkesa për të shkruar shqipen si gjuhën e vendit, për ta përdorur edhe në praktikën fetare e për t'u çliruar nga ndikimet e kulturave të huaja. Kjo ishte më tepër prirje e shtresave që lidheshin me format e reja ekonomike, (tregtare e monetare). Nga ana tjetër, është shtimi i trysnisë ideologjike të pushtuesit. Nëpërmjet fesë dhe kulturës islame synohej të arrihej nënshtrimi i shqiptarëve. Pushtuesi hapi këtu edhe shkollat e veta. Shumë poetë bejtexhinj kishin mësuar në to.
+Natyrisht, Krijimtaria poetike e bejtexhinjve ruan ndikimin e poezisë e të kulturës orientale, por ajo është pjesë e pandarë e kulturës së popullit tonë. Ajo është shprehje e talentit, e shpirtit krijues të tij, që, në kushte të caktuara, fitoi edhe tipare në përpothje me to.
+Bejtexhinjtë e shkruan shqipen me alfabet arab dhe përdorën një gjuhë të mbytur nga fjalët persiane, turke e arabe.
+Letërsia e bejtexhinjve pati dy faza në zhvillimin e saj. Faza e parë shkon gjer nga fundi i shekullit XVIII. Në veprat e kësaj faze më tepër gjeti shprehje fryma laike, kurse në veprat e fazës së dytë, që nis nga çereku i fundit i shekullit XVIII dhe kapërcen në shekullin e XIX, mbizotëroi tema me karakter fetar.
+Në krijimet me tema laike mjaft poetë bejtexhinj, në frymën e poezive orientale, i kënduan dashurisë, bukurisë së natyrës e të gruas, lartësuan virtytin, punën, diturinë ose fshikulluan mburrjen e kotë për pasurinë e fisin, goditën ambicjen, hipokrizinë etj. Të tillë ishin Nezim Frakulla, Sulejman Naibi, Muhamet Kyçyku etj.
+Një hap i mëtejshëm u shënua me mjaft krijime të disa bejtexhinjve të tjerë, si: Hasan Zyko Kamberi, Zenel Bastari e ndonjë tjetër. Ata pasqyruan elemente e ngjarje të jetës bashkohore dhe shtruan një problematikë të mprehtë shoqërore. Me nota realiste, ata vunë në dukje jetën e vështirë plot vuajtje të masave të varfra të popullit, pasigurinë për të ardhmen dhe pakënaqësinë e tyre në kushtet e sundimit feudal, në shthurrje e sipër. Në vjershën "Tirana jonë si mësoi„ Zenel Bastari, fshatar nga Bastari i Tiranës, jep një tablo të tillë të gjendjes së popullit.
+
+Ymrin(jetën) na e kanë shkurtue
+Po na shtrydhin porsi rrush,
+bytym kalbi(krejt zemra) na u coptue,
+me vner shpirti u mbush.
+Bukë pa bukë po rrojnë fakirat,(të varfërit, të shkretët)
+Pa opinga, zbathë e zhveshë;
+vetë janë mbulue me gjithë të mirat,
+si katilët rrinë tue qeshë.
+
+Letërsia e bejtexhinjve nuk arriti të ngrihet në shkallën e letërsisë kombëtare. Megjithatë, bejtexhinjtë me krijimet e tyre dhanë një ndihmesë që duhet çmuar. Ata shkruan shqip në një kohë kur shqipen e kërcënonte rreziku nga përhapja e gjuhës së pushtuesit dhe e gjuhëve të tjera. Ata krahas temës fetare, ishin të parët që trajtuan gjerësisht temën laike.
+Gjithashtu dia prej tyre duke qenë më afër jetës së popullit, futën në poezi elemntë të jetës së kohës. Këta trajtuan tematikën shoqërore me nota realiste dhe me një sens kritik të fortë.
+Së fundi, me krijimet e bejtexhinjve poezia shqiptare bënte një hap përpara nga ana artistike. Në to shpesh gjejmë mjete shprehëse e figurative shumë të goditura, vlera të vërteta artistike. Poetët bejtexhinj morën edhe nga mjetet e traditës poetike të vendit; p.sh. vargun tetërrokësh; që e bënë vargun bazë dhe që e përdorën të gjithë. Veprat e bejtexhinjve mbetën në dorëshkrim. Ato u përhapën përmes kopjimit me dorë ose me anë të traditës gojore.
+Numri i autorëve të letërsisë shqiptare me alfabet arab është shumë i madh. Ata krijuan në qytete mjaft të zhvilluara për kohën, si në Berat, Elbasan, Shkodër, Gjakovë, Prishtinë por edhe në vende më të vogla; si në Kolonjë, Frashër, Konispol e gjetkë.
+Ndër bejtexhinjtë, më kryesorë po përmendim Nezim Frakullën, Sulejman Naibin, Dalip e Shahin Frashërin, autorë të dy historive fetare të vjershëruara, Hasan Zyko Kamberin, Zenel Bastarin, Tahir Gjakovën etj. Shumë i njohur u bë edhe Murat Kyçyku (Cami), përkthyes i ndonjë vepre fetare nga arabishtja dhe autor i disa tregimeve të gjata në vargje. Nga këto përmendim poemën "Erveheja„ , me temë nga letërsitë orientale e me natyrë moralizuese. Me këto vepra Kyçyku i çeli rrugën poezisë me subjekt.
+Rryma letrare e bejtexhinjve e humbi peshën e saj në jetën kulturore qysh nga fillimi i shekullit të XIX, por në disa mjedise, si në Kosovë, kjo traditë vijoi edhe më tej nga autorë të tillë si Maliq Rakoveci, Rexhep Voka etj.

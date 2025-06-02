@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ websiteName }}</title>
+    <meta name="description" content="Explore insightful articles on technology, lifestyle tips, travel adventures, and photography. My Awesome Blog brings you fresh perspectives and engaging stories.">
+    <meta property="og:title" content="My Awesome Blog - Tech Insights, Lifestyle Tips, and Photography Adventures" />
+    <meta property="og:description" content="Explore insightful articles on technology, lifestyle tips, travel adventures, and photography. My Awesome Blog brings you fresh perspectives and engaging stories." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.com/blog_index.html" />
+    <meta property="og:image" content="https://example.com/images/blog_logo_og.png" />
+    <meta property="og:site_name" content="My Awesome Blog" />
+   <link rel="stylesheet" href="style.css">
+</head>
+<body class="blog-index">
+    <header>
+        <h1>{{ websiteName }}</h1>
+        <nav class="primary-navigation">
+            <ul>
+
+                {{ for page in pages }}
+                <li>
+                    <a href="index.html">{{ page.name }}</a>
+                </li>
+                {{ end }}
+            </ul>
+        </nav>
+        <button id="theme-switcher">Switch Theme</button>
+    </header>
+    <main>
+        <div class="main-content-area">
+            {{ for post in posts }}
+            <article>
+                <h2><a href="post.html">{{ post.title }}</a></h2>
+                <p class="date">{{ post.date }}</p>
+                <p>{{ post.snippet }}</p>
+            </article>
+            {{ end }}
+            
+        </div>
+        <aside class="sidebar">
+            <div class="widget connect-widget">
+                <h4>Connect</h4>
+                <p><a href="#rss-sidebar" class="rss-sidebar-link">Subscribe via RSS</a></p>
+            </div>
+            <div class="widget categories-widget">
+                <h4>Categories</h4>
+                <ul>
+
+                                    
+                <ul>
+                    <li></li>
+                </ul>
+
+                   
+                    {{ for category in categories }}
+                        {{ partial categoryItem with category }}
+                    {{ end }}
+   
+
+                </ul>
+            </div>
+            <div class="widget recent-posts-widget">
+                <h4>Recent Posts</h4>
+                <ul>
+                    {{ for recentpost in recentposts }}
+                    <li><a href="post.html">{{ recentpost.title }}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
+        </aside>
+    </main>
+    <footer>
+        <p>{{ websiteCopyright }}</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<h1>{{ websiteName }}</h1>
+
+{{ for page in pages }}
+  <ul>
+    <li>{{ page.name }}</li>
+  </ul>
+{{ end }}
+
+{{ for nav in navs }}
+    <a>{{ nav.name }}</a> >>
+{{ end }}
+
+{{ for category in categories }}
+  <ul>
+    <li>{{ category.name }}</li>
+  </ul>
+{{ end }}
+
+
+{{ for post in posts }}
+  <article>
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.date }}</p>
+    <div>{{ post.snippet }}</div>
+  </article>
+{{ end }}
+
+
+  <article>
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.date }}</p>
+    <div>{{ post.ciontent }}</div>
+  </article>
+
+
+
+{{ for recentpost in recentposts }}
+  <p>
+    <a>{{ recentpost.title }}</a>
+  </p>
+{{ end }}
+
+
+
+<p>{{ websiteCopyright }}</p>
