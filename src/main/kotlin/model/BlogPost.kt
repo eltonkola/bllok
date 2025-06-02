@@ -1,5 +1,9 @@
 package com.eltonkola.model
 
+import jdk.internal.vm.ThreadContainers.root
+import org.intellij.markdown.flavours.commonmark.CommonMarkFlavourDescriptor
+import org.intellij.markdown.html.HtmlGenerator
+import org.intellij.markdown.parser.MarkdownParser
 import java.io.File
 import java.time.Instant
 import java.time.LocalDate
@@ -19,8 +23,10 @@ data class PostMetadata(
 data class BlogPost(
     val metadata: PostMetadata,
     val content: String,
-    val fileName: String
+    val fileName: String,
+    val link: String
 ){
+
     val snippet get() = extractPreview(content)
 }
 
@@ -30,88 +36,126 @@ fun extractPreview(body: String, maxLength: Int = 300): String {
     else firstParagraph.take(maxLength).substringBeforeLast(" ") + "..."
 }
 
-fun parseBlogPost(filePath: String): BlogPost {
-    val thisFile = File(filePath)
+fun BlogFile.parseBlogPost(): BlogPost {
+    val thisFile = File(this.file.path)
     val lines = thisFile.readLines()
-    var metadataLines = mutableListOf<String>()
-    var contentLines = mutableListOf<String>()
+
+    val metadataLines = mutableListOf<String>()
+    val contentLines = mutableListOf<String>()
 
     var index = 0
 
-    // Detect frontmatter block at the top
-    if (lines.isNotEmpty() && lines[0].trim() == "+++") {
+    // Detect YAML front matter with '---'
+    if (lines.isNotEmpty() && lines[0].trim() == "---") {
         index = 1
         while (index < lines.size) {
-            val line = lines[index].trim()
-            if (line == "+++") {
+            val line = lines[index].trimEnd()
+            if (line.trim() == "---") {
                 index++
                 break
             }
-            metadataLines.add(lines[index])
+            metadataLines.add(line)
             index++
         }
     }
 
-    // Everything after frontmatter (or from start if no frontmatter)
+    // Remainder is markdown content
     while (index < lines.size) {
         contentLines.add(lines[index])
         index++
     }
 
-    // Parse TOML-like frontmatter (simple key=value pairs)
-    val metadataMap = mutableMapOf<String, String>()
+    val metadataMap = parseYamlFrontMatter(metadataLines)
 
-    for (line in metadataLines) {
-        val trimmed = line.trim()
-        if (trimmed.isEmpty() || trimmed.startsWith("#")) continue
-        val parts = trimmed.split("=", limit = 2)
-        if (parts.size != 2) continue
-        val key = parts[0].trim()
-        var value = parts[1].trim()
-
-        // Remove quotes if any
-        if (value.startsWith("\"") && value.endsWith("\"")) {
-            value = value.removeSurrounding("\"")
-        } else if (value.startsWith("[") && value.endsWith("]")) {
-            // For lists, keep as is (e.g. ["tag1", "tag2"])
-            // We'll parse this later as comma separated without quotes
-            value = value.removeSurrounding("[", "]")
-        }
-
-        metadataMap[key] = value
-    }
-
-    fun parseDateOrNull(value: String?): LocalDate ?  =
+    fun parseDateOrNull(value: String?): LocalDate? =
         try {
-            if (value == null) null else LocalDate.parse(value)
-        } catch (e: DateTimeParseException) {
+            value?.let { LocalDate.parse(it) }
+        } catch (e: Exception) {
             null
         }
 
-    // Parse tags as list from CSV-like string
-    val tags = metadataMap["tags"]?.split(",")
-        ?.map { it.trim().removeSurrounding("\"") }
-        ?: emptyList()
+    val tags = metadataMap["tags"]?.let {
+        if (it.startsWith("[") && it.endsWith("]")) {
+            it.removeSurrounding("[", "]").split(",").map { tag -> tag.trim().removeSurrounding("\"") }
+        } else {
+            emptyList()
+        }
+    } ?: emptyList()
 
     val content = contentLines.joinToString("\n")
+
     val metadata = PostMetadata(
         title = metadataMap["title"] ?: thisFile.nameWithoutExtension,
         date = parseDateOrNull(metadataMap["date"]) ?: thisFile.lastModifiedDate(),
         slug = metadataMap["slug"] ?: "",
         summary = metadataMap["summary"] ?: extractPreview(content),
         tags = tags,
-        draft = metadataMap["draft"]?.toBoolean() ?: false,
+        draft = metadataMap["draft"]?.toBooleanStrictOrNull() ?: false,
         language = metadataMap["language"] ?: "en"
     )
 
+    val flavour = CommonMarkFlavourDescriptor()
+    val parsedTree = MarkdownParser(flavour).buildMarkdownTreeFromString(content)
+    val html = HtmlGenerator(content, parsedTree, flavour).generateHtml()
+
+    val updatedHtml = html.replace(
+        Regex("""<a\s+href="((?!https?:|mailto:|#)[^"]+?)(?<!\.html)">""")
+    ) { matchResult ->
+        val href = matchResult.groupValues[1]
+        """<a href="${href}.html">"""
+    }
     return BlogPost(
         metadata = metadata,
-        content = content,
-        fileName = File(filePath).name
+        content = updatedHtml,
+        fileName = thisFile.nameWithoutExtension,
+        link = "${this.parent?.path + "/" ?: ""}${thisFile.nameWithoutExtension}.html"
     )
 }
+
 
 fun File.lastModifiedDate(): LocalDate =
     Instant.ofEpochMilli(this.lastModified())
         .atZone(ZoneId.systemDefault())
         .toLocalDate()
+
+
+fun parseYamlFrontMatter(lines: List<String>): Map<String, String> {
+    val map = mutableMapOf<String, String>()
+    var currentKey: String? = null
+    var listBuffer: MutableList<String>? = null
+
+    for (line in lines) {
+        val trimmed = line.trim()
+        if (trimmed.isEmpty()) continue
+
+        when {
+            trimmed.startsWith("- ") && currentKey != null -> {
+                listBuffer?.add(trimmed.removePrefix("- ").trim())
+            }
+
+            ":" in trimmed -> {
+                val (key, rawValue) = trimmed.split(":", limit = 2).map { it.trim() }
+                currentKey = key
+
+                if (rawValue.isEmpty()) {
+                    // Start of list
+                    listBuffer = mutableListOf()
+                } else {
+                    map[key] = rawValue.removeSurrounding("\"")
+                    listBuffer = null
+                }
+            }
+
+            else -> {
+                // Skip unknown line
+            }
+        }
+
+        if (currentKey != null && listBuffer != null) {
+            map[currentKey!!] = listBuffer!!.joinToString(",", prefix = "[", postfix = "]")
+        }
+    }
+
+    return map
+}
+

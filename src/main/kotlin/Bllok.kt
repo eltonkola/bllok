@@ -3,7 +3,6 @@ package com.eltonkola
 import com.eltonkola.model.BllokConfig
 import com.eltonkola.model.buildCategoryTree
 import com.eltonkola.model.parseTomlConfig
-import jdk.internal.vm.ThreadContainers.root
 import java.io.File
 import java.time.Instant
 import kotlin.system.exitProcess
@@ -61,7 +60,6 @@ class Bllok(
         File(options.outputPath).clearFolder()
         copyStaticFiles(File(options.templatePath), File(options.outputPath))
 
-
         BllokGenerator(
             config = config,
             root = contentTree,
@@ -92,7 +90,7 @@ class Bllok(
             if (
                 file.name == "index.html" ||
                 file.name == "post.html" ||
-                relative.path.startsWith("partials")
+                file.name.startsWith("partial_")
             ) return@forEach
 
             if (file.isDirectory) {

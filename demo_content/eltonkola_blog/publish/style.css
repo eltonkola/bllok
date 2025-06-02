@@ -1,0 +1,606 @@
+:root {
+    /* Light Theme Variables */
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --link-color: #007bff;
+    --link-hover-color: #0056b3;
+    --header-bg: #f8f9fa;
+    --footer-bg: #f8f9fa;
+    --heading-color: #212529;
+    --border-color: #eeeeee;
+    --blockquote-bg: #f9f9f9;
+    --blockquote-border: #ccc;
+    --code-bg: #f0f0f0;
+    --button-bg: #efefef;
+    --button-text: #333333;
+    --button-border: #cccccc;
+
+    /* Font Variables */
+    --font-body: 'Georgia', 'Times New Roman', Times, serif;
+    --font-heading: 'Helvetica Neue', Arial, sans-serif; /* A cleaner sans-serif for headings */
+    /* Alternative heading font: --font-heading: 'Playfair Display', serif; */
+
+    --content-max-width: 1100px; /* For readability of long articles */
+}
+
+body {
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-theme {
+    /* Dark Theme Variable Overrides */
+    --bg-color: #22272e; /* Darker blue-grey */
+    --text-color: #c9d1d9; /* Lighter grey */
+    --link-color: #58a6ff;
+    --link-hover-color: #2f81f7;
+    --header-bg: #1c2128;
+    --footer-bg: #1c2128;
+    --heading-color: #c9d1d9; 
+    --border-color: #373e47;
+    --blockquote-bg: #2d333b;
+    --blockquote-border: #444c56;
+    --code-bg: #373e47;
+    --button-bg: #373e47;
+    --button-text: #c9d1d9;
+    --button-border: #555c66;
+}
+
+header, footer {
+    background-color: var(--header-bg);
+    padding: 1.5em 1em;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+footer {
+    border-top: 1px solid var(--border-color);
+    border-bottom: none;
+    margin-top: 3em;
+    font-size: 0.9em;
+}
+
+header h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5em; /* Increased size */
+    margin: 0;
+    color: var(--heading-color);
+}
+
+header h1 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Sidebar and Two-Column Layout Styling --- */
+main {
+    display: flex; /* Use flexbox for main content and sidebar */
+    flex-wrap: wrap; /* Allow sidebar to wrap on smaller screens */
+    gap: 2em; /* Space between main content and sidebar */
+    max-width: var(--content-max-width); /* Keep overall width constraint */
+    margin: 2em auto; /* Centering content */
+    padding: 0 1em; /* Padding for smaller screens */
+}
+
+.main-content-area {
+    flex: 3; /* Takes up 3 parts of the space */
+    min-width: 0; /* Prevent flexbox overflow issues */
+}
+
+.sidebar {
+    flex: 1; /* Takes up 1 part of the space */
+    min-width: 280px; /* Minimum width for the sidebar before it wraps or shrinks too much */
+    /* Consider adding a border or subtle background if needed */
+    /* border-left: 1px solid var(--border-color); */
+    /* padding-left: 1.5em; */
+}
+
+/* Sidebar Widgets */
+.widget {
+    background-color: var(--blockquote-bg); /* Re-use for a subtle background */
+    padding: 1em 1.5em;
+    margin-bottom: 2em;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.widget h4 { /* Widget titles */
+    font-family: var(--font-heading);
+    font-size: 1.3em;
+    color: var(--heading-color);
+    margin-top: 0;
+    margin-bottom: 0.8em;
+    padding-bottom: 0.4em;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Category Tree / Widget List Styling */
+.widget ul {
+    list-style: none;
+    padding-left: 0; /* Remove default padding */
+    margin-bottom: 0;
+}
+
+.widget li {
+    margin-bottom: 0.6em;
+}
+
+.widget a {
+    text-decoration: none;
+    color: var(--link-color);
+    font-size: 0.95em;
+    transition: color 0.2s ease-in-out;
+}
+
+.widget a:hover,
+.widget a:focus {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+/* Nested lists in widgets (for categories) */
+.widget ul ul {
+    padding-left: 1.2em; /* Indentation for sub-categories */
+    margin-top: 0.6em;
+    /* Add a visual cue for nesting if desired, e.g., border-left */
+}
+
+.widget ul ul li:last-child {
+    margin-bottom: 0; /* No margin for last sub-item before next top-level item */
+}
+
+
+/* Responsive adjustments for sidebar layout */
+@media (max-width: 992px) { /* Tablet and below */
+    .main-content-area {
+        /* On tablets, content area could take more relative space or stack */
+        flex-basis: 65%;
+    }
+    .sidebar {
+        flex-basis: 30%;
+    }
+}
+
+/* --- Sidebar RSS Link Styling --- */
+.connect-widget .rss-sidebar-link {
+    display: inline-block; /* Allows padding and other block-like properties */
+    text-decoration: none;
+    color: var(--link-color);
+    font-weight: bold;
+    padding: 0.3em 0; /* Add some padding if it were to have a background/border */
+    transition: color 0.2s ease-in-out;
+}
+
+.connect-widget .rss-sidebar-link:hover,
+.connect-widget .rss-sidebar-link:focus {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+/* Attempt to add a Unicode character as an icon.
+   U+1F4F6 (ANTENNA BARS) is a possibility, or just text "RSS: ".
+   FontAwesome's RSS icon is U+F29E, but that requires FontAwesome.
+   Let's try with a simple text prefix or a more generic symbol for now,
+   as specific RSS Unicode symbols can be problematic with font support.
+   A common approach is to use a background image (SVG icon) for this,
+   but that's outside the scope of "CSS-only icon" unless it's a data URI.
+
+   For simplicity, let's ensure good text styling and optionally add a simple prefix.
+   A unicode character that is sometimes used for "feed" like things is  (U+F270)
+   but it's in a Private Use Area, relying on font support (like FontAwesome having mapped it there).
+   Let's use a safer, more descriptive approach if a good unicode char isn't found.
+   Using a simple text prefix or a unicode character that implies "signal" or "broadcast".
+*/
+
+.connect-widget .rss-sidebar-link::before {
+    content: "📶 "; /* ANTENNA BARS (U+1F4F6) - a generic signal icon */
+    /* Alternatively, content: "[RSS] "; */
+    /* Or, if a specific visual icon font was used, content: '\f09e'; font-family: 'FontAwesome'; */
+    margin-right: 0.3em;
+    font-weight: normal; /* Icon might not need to be bold */
+}
+
+/* Ensure the widget title and paragraph containing the link have good spacing */
+.connect-widget h4 {
+    margin-bottom: 0.5em; /* Default widget h4 has 0.8em, this is fine */
+}
+
+.connect-widget p {
+    margin-bottom: 0; /* Remove bottom margin if this is the only item in p */
+}
+
+/* --- Breadcrumb Navigation Styling --- */
+.breadcrumb-nav {
+    margin-bottom: 1.5em; /* Space below breadcrumbs, above article title */
+    font-size: 0.9em;
+    padding: 0.5em 0;
+    /* border-bottom: 1px solid var(--border-color); Optional: if a separator line is desired */
+}
+
+.breadcrumb-nav ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Arrange items inline and allow wrapping */
+    flex-wrap: wrap; /* Allow breadcrumbs to wrap on small screens */
+    align-items: center;
+}
+
+.breadcrumb-nav li {
+    display: inline-block; /* Fallback if flex not supported, though flex is on ol */
+    /* margin-right: 0.5em; Spacing handled by separator's margin */
+}
+
+.breadcrumb-nav li a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.breadcrumb-nav li a:hover,
+.breadcrumb-nav li a:focus {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+/* Separator styling */
+.breadcrumb-nav li + li::before { /* Selects all LIs that are preceded by another LI */
+    content: ">"; /* Or use "F" for a slash, or other preferred separator */
+    color: var(--text-color); /* Use text-color or a more subtle color */
+    opacity: 0.7;
+    margin: 0 0.6em; /* Space around the separator */
+    display: inline-block;
+}
+
+/* Current page styling */
+.breadcrumb-nav li.active {
+    color: var(--text-color); /* Current page is not a link, use main text color */
+    font-weight: normal; /* Or bold if preferred */
+    opacity: 0.85; /* Slightly subdued if desired */
+}
+
+/* Dark theme considerations for separator and active item if needed */
+body.dark-theme .breadcrumb-nav li + li::before {
+    color: var(--text-color); /* Ensure this inherits correctly */
+}
+
+body.dark-theme .breadcrumb-nav li.active {
+    color: var(--text-color); /* Ensure this inherits correctly */
+}
+
+/* Responsive YouTube Video Embed */
+.video-responsive-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (height/width * 100) */
+    margin: 1.5em 0; /* Similar to figure/image margins */
+}
+
+.video-responsive-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove default iframe border */
+}
+
+/* Category Tree Interactivity */
+.categories-widget li.has-children > ul {
+    display: none; /* Initially hide sub-categories */
+    padding-left: 1.5em; /* Keep consistent indentation */
+    margin-top: 0.5em;
+}
+
+.categories-widget li.has-children.expanded > ul {
+    display: block; /* Show when expanded */
+}
+
+.category-toggle {
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 5px;
+    padding: 0 5px;
+    border-radius: 3px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    font-size: 0.8em;
+    display: inline-block;
+    user-select: none; /* Prevent text selection */
+}
+
+.categories-widget li.has-children > a.category-parent-link {
+    /* Optional: if you want the link itself to also toggle, style accordingly */
+    /* For now, only the span toggles */
+}
+
+@media (max-width: 768px) { /* Mobile */
+    main {
+        flex-direction: column; /* Stack main content and sidebar */
+        gap: 0; /* Remove gap when stacked, rely on widget margins */
+    }
+
+    .main-content-area,
+    .sidebar {
+        flex-basis: 100%; /* Both take full width */
+        min-width: 100%;
+    }
+
+    .sidebar {
+        margin-top: 2em; /* Add space when sidebar is stacked below content */
+        /* border-left: none; */ /* Remove side border if it was added */
+        /* padding-left: 0; */
+    }
+}
+
+article { /* Styling for article previews on index and full article container */
+    margin-bottom: 2.5em;
+    padding-bottom: 1.5em;
+}
+
+/* On index page, add border to article snippets */
+.blog-index main > article {
+     border-bottom: 1px solid var(--border-color);
+}
+
+.blog-index main > article:last-child {
+    border-bottom: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--heading-color);
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.3;
+}
+
+h1 { font-size: 2.8em; } /* For article titles primarily */
+h2 { font-size: 2.2em; } /* For index page article titles & major sections */
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.4em; }
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* To remove bottom space */
+    margin: 1em 0; /* Default margin for images */
+}
+
+#theme-switcher {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    padding: 0.6em 1em;
+    cursor: pointer;
+    border: 1px solid var(--button-border);
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border-radius: 5px;
+    font-family: var(--font-body);
+}
+
+/* Add a class to body of index page to differentiate if needed */
+/* For example: <body class="blog-index"> */
+
+/* Ensure article content within blog_article.html also respects max-width */
+.blog-article main article {
+    max-width: var(--content-max-width);
+    margin: 0 auto; /* Center the article content if not already by main */
+}
+
+/* Specific styling for elements within an article - will be expanded in next step */
+.blog-article .date {
+    color: #777; /* Keep date subtle, might need dark theme var */
+    font-size: 0.9em;
+    margin-bottom: 1.5em;
+}
+
+body.dark-theme .blog-article .date {
+    color: #888;
+}
+
+/* --- Content Styling --- */
+
+/* Blockquotes */
+blockquote {
+    background-color: var(--blockquote-bg);
+    border-left: 5px solid var(--blockquote-border);
+    margin: 1.5em 0; /* Adjusted margin, no horizontal margin for full width effect if desired */
+    padding: 1em 1.5em;
+    font-style: italic;
+    color: var(--text-color); /* Ensure text color contrasts with blockquote bg */
+}
+
+blockquote p {
+    margin-bottom: 0.5em;
+}
+
+blockquote footer {
+    font-style: normal;
+    font-size: 0.9em;
+    color: var(--text-color); /* Ensure this also has good contrast */
+    text-align: right;
+    background-color: transparent; /* Override default footer styles */
+    padding: 0.5em 0 0 0;
+    border: none; /* Override default footer styles */
+    margin-top: 0.5em;
+}
+
+body.dark-theme blockquote {
+    /* color: var(--text-color); Ensure this is handled by general var */
+}
+
+body.dark-theme blockquote footer {
+    /* color: var(--text-color); */
+}
+
+
+/* Figures and Captions for Images */
+figure {
+    margin: 1.5em 0; /* Allow figures to take full width or be centered by main */
+    padding: 0;
+}
+
+figure img {
+    margin-bottom: 0.5em; /* Space between image and caption */
+}
+
+figcaption {
+    font-size: 0.9em;
+    color: #555555; /* Slightly lighter than main text for subtlety */
+    text-align: center;
+    font-style: italic;
+    line-height: 1.4;
+    padding: 0.3em 0;
+}
+
+body.dark-theme figcaption {
+    color: #aaaaaa;
+}
+
+/* Code Blocks */
+pre {
+    background-color: var(--code-bg);
+    padding: 1em;
+    overflow-x: auto;
+    border-radius: 4px;
+    font-family: 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin: 1.5em 0;
+    white-space: pre; /* Ensure preformatting is respected */
+}
+
+pre code {
+    font-family: inherit; /* Inherit font stack from pre */
+    background-color: transparent; /* Code inside pre shouldn't have its own bg */
+    padding: 0;
+    border-radius: 0;
+    font-size: inherit; /* Inherit font size from pre */
+}
+
+/* Refined Publication Date styling (if needed, review from Step 4) */
+.blog-article .date {
+    display: block; /* Ensure it takes its own line */
+    color: #6c757d; /* Bootstrap-like subtle color */
+    font-size: 0.9em;
+    margin-bottom: 2em; /* More space after date before content */
+    font-style: italic;
+}
+
+body.dark-theme .blog-article .date {
+    color: #8892b0; /* A suitable subtle color for dark theme */
+}
+
+/* Horizontal Rule */
+hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 3em 0; /* Generous spacing */
+}
+
+/* Improve list styling */
+ul, ol {
+    margin-bottom: 1em;
+    padding-left: 1.5em; /* Standard indentation */
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+/* --- Primary Navigation Styling --- */
+.primary-navigation {
+    margin-top: 1em; /* Space below the main title */
+    margin-bottom: 0.5em; /* Space above the theme switcher if it's pushed down */
+    text-align: center; /* Center the nav links */
+}
+
+.primary-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block; /* Allows centering of the ul itself if needed */
+}
+
+.primary-navigation li {
+    display: inline-block; /* Arrange links horizontally */
+    margin: 0 0.75em; /* Space between links */
+}
+
+.primary-navigation a {
+    text-decoration: none;
+    color: var(--link-color);
+    font-family: var(--font-heading); /* Use heading font for nav links for consistency */
+    font-size: 1em; /* Adjust as needed */
+    padding: 0.3em 0; /* Slight padding for better click area */
+    border-bottom: 2px solid transparent; /* For hover effect */
+    transition: border-bottom-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.primary-navigation a:hover,
+.primary-navigation a:focus {
+    color: var(--link-hover-color);
+    border-bottom-color: var(--link-hover-color);
+}
+
+/* Adjust theme switcher position slightly if needed due to nav */
+/* The theme switcher is absolutely positioned, so it might be okay,
+   but let's ensure header has position: relative for robust placement. */
+header {
+    position: relative; /* Ensures absolute positioning of children is relative to header */
+}
+
+/* Responsive considerations for primary navigation */
+@media (max-width: 768px) {
+    .primary-navigation li {
+        margin: 0 0.5em; /* Reduce spacing on smaller screens */
+    }
+    .primary-navigation a {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    .primary-navigation ul {
+        display: flex; /* Allow wrapping */
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .primary-navigation li {
+        margin: 0.3em 0.5em; /* Adjust for wrapped items */
+    }
+    header h1 {
+        font-size: 2em; /* Slightly reduce title size if nav takes space */
+    }
+    #theme-switcher {
+        /* Example: move button if header becomes too crowded.
+           For now, assuming it's fine due to nav text centering.
+           If nav pushes it, it might need to be static or part of flow.
+           Let's test current absolute positioning first. */
+        /* position: static; margin-top: 0.5em; */
+    }
+}

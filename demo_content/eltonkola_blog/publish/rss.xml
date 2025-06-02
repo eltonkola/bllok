@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+<title>eltonKola</title>
+<link>https://localhost:8000</link>
+<description>random thoughts from a dev&apos;s life</description>
+<language>en-us</language>
+<lastBuildDate>Mon, 2 Jun 2025 16:38:13 -0400</lastBuildDate>
+<docs>https://www.rssboard.org/rss-specification</docs>
+<generator>Simple Kotlin RSS Generator</generator>
+<item>
+<title>Contact</title>
+<description>&lt;body&gt;&lt;h1&gt;Contact&lt;/h1&gt;&lt;p&gt;I&apos;d love to hear from you!&lt;/p&gt;&lt;p&gt;Whether you want to collaborate, provide feedback, or just say hi — feel free to reach out through any of the channels below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;🌍 Website: &lt;a href=&quot;https://eltonkola.com&quot;&gt;eltonkola.com&lt;/a&gt;  &lt;/li&gt;&lt;li&gt;🐙 GitHub: &lt;a...</description>
+<link>https://localhost:8000/Contact</link>
+<pubDate>Mon, 2 Jun 2025 16:38:13 -0400</pubDate>
+</item>
+<item>
+<title>About Me</title>
+<description>&lt;body&gt;&lt;h1&gt;About Me&lt;/h1&gt;&lt;p&gt;Hello! 👋 I&apos;m &lt;strong&gt;Elton Kola&lt;/strong&gt;, a software engineer passionate about simplicity, performance, and the power of clean code.&lt;/p&gt;&lt;p&gt;I started this blog to document my thoughts, share what I learn, and connect with like-minded developers. Whether it&apos;s a quick tip, a...</description>
+<link>https://localhost:8000/About</link>
+<pubDate>Mon, 2 Jun 2025 16:38:13 -0400</pubDate>
+</item>
+<item>
+<title>Welcome Back</title>
+<description>&lt;body&gt;&lt;h2&gt;Welcome Back&lt;/h2&gt;&lt;p&gt;The good news? I finally have a blog again.&lt;br /&gt;
+The bad news? It’s probably my seventh or eighth attempt—and if history is any guide, my blogs tend to fade away, lost somewhere between memory and markdown files.&lt;/p&gt;&lt;p&gt;But this time, I’m doing things differently. This...</description>
+<link>https://localhost:8000/Welcome Back</link>
+<pubDate>Mon, 2 Jun 2025 16:38:13 -0400</pubDate>
+</item>
+</channel>
+</rss>

@@ -1,27 +1,52 @@
 package com.eltonkola
 
+import Page
 import com.eltonkola.engine.pageRenderer
 import com.eltonkola.engine.recents
 import com.eltonkola.engine.rss.renderRssFeed
 import com.eltonkola.model.BllokConfig
 import com.eltonkola.model.BlogConfig
+import com.eltonkola.model.BlogFile
 import com.eltonkola.model.BlogPost
 import com.eltonkola.model.Category
 import com.eltonkola.model.parseBlogPost
 import java.io.File
 
 class BllokGenerator(
+    private val parentPages: List<Page> = emptyList(),
+    private val parentCategories: List<Category> = emptyList(),
     private val config: BlogConfig,
     private val root: Category,
     private val isRoot: Boolean,
     val options: BllokConfig
 ){
+
+    val blogPages : List<Page> get() {
+        if(parentPages.isNotEmpty()){
+            return parentPages
+        }
+        val allPages = root.subcategories.firstOrNull { it.name == "Pages" }
+        return allPages?.getAllFiles()?.map { page ->
+            val post = page.parseBlogPost()
+            Page(post.metadata.title, post.link)
+        } ?: emptyList<Page>()
+    }
+
+    val blogCategories : List<Category> get() {
+        if(parentCategories.isNotEmpty()){
+            return parentCategories
+        }
+        return root.subcategories.filter { it.name != "Pages" }
+    }
+
+
+
     fun generate(){
         //we will generate a category, this may be the root folder, or a subfolder on a tree of content
         println("config: $config")
         println("inputPath: $root")
 
-        val allFiles = root.getAllFiles().sortedBy { it.lastModified() }
+        val allFiles = root.getAllFiles().sortedBy { it.file.lastModified() }
         val recents = allFiles.recents(5)
         //1. generate index page
         renderIndex(
@@ -43,8 +68,8 @@ class BllokGenerator(
     }
 
     fun renderIndex(
-        allFiles: List<File>,
-        recents: List<File>
+        allFiles: List<BlogFile>,
+        recents: List<BlogFile>
     ){
         //make directory if it does not exist
         val currentDir = File(options.outputPath, root.path)
@@ -58,12 +83,27 @@ class BllokGenerator(
             print("index: $index - page: $page")
             val fileName = if(index == 0) "index.html" else "index_${index+1}.html"
             pageRenderer(
+                categories = blogCategories,
+                pages = blogPages,
                 options = options,
                 config = config,
                 pageFiles = page,
                 recentsFiles = recents,
                 templatePage = "index.html",
-                fileName = root.path + fileName
+                fileName = root.path + "/" + fileName
+            )
+        }
+
+        if(pages.isEmpty()){
+            pageRenderer(
+                categories = blogCategories,
+                pages = blogPages,
+                options = options,
+                config = config,
+                pageFiles = emptyList(),
+                recentsFiles = recents,
+                templatePage = "index.html",
+                fileName = root.path + "/index.html"
             )
         }
 
@@ -71,25 +111,39 @@ class BllokGenerator(
 
     fun renderPage(
         post: BlogPost,
-        recents: List<File>
+        recents: List<BlogFile>
         ){
+
+        pageRenderer(
+            categories = blogCategories,
+            pages = blogPages,
+            options = options,
+            config = config,
+            pageFiles = emptyList(),
+            recentsFiles = recents,
+            templatePage = "post.html",
+            fileName =  post.link,
+            post = post
+        )
 
     }
 
     fun renderSubcategory(subCategory: Category){
-//        BllokGenerator(
-//            config = config,
-//            root = subCategory,
-//            isRoot = false,
-//            options = options
-//        ).generate()
+        BllokGenerator(
+            parentCategories = blogCategories,
+            parentPages = blogPages,
+            config = config,
+            root = subCategory,
+            isRoot = false,
+            options = options
+        ).generate()
     }
 
     fun renderRss(
-        allFiles: List<File>
+        allFiles: List<BlogFile>
     ){
 
-        val feed : List<BlogPost> = allFiles.recents(config.postsPerPage).map { parseBlogPost(it.path) }
+        val feed : List<BlogPost> = allFiles.recents(config.postsPerPage).map { it.parseBlogPost() }
 
         renderRssFeed(
             options = options,

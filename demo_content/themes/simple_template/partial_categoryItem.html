@@ -1,0 +1,8 @@
+ <li>
+     <a href="#" class="hover:underline"> {{ this.name }}</a>
+     <ul>
+         {{ for subcategory in this.subCategories }}
+         {{ partial categoryItem with subcategory }}
+         {{ end }}
+     </ul>
+ </li>

@@ -1,12 +1,10 @@
 
  <li class="has-children">
-    <a href="#" class="category-parent-link">
-        {{ this.name }} - {{ this.hasKids }}
+    <a href="/{{this.link}}" class="category-parent-link">
+        {{ this.name }}
     </a> 
     {{ if this.subCategories }}
         <span class="category-toggle">[+]</span>
-    {{ else }}
-        <span class="category-toggle">*</span>
     {{ end }}
     <ul>
          {{ for subcategory in this.subCategories }}

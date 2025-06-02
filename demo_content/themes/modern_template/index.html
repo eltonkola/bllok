@@ -11,17 +11,16 @@
     <meta property="og:url" content="https://example.com/blog_index.html" />
     <meta property="og:image" content="https://example.com/images/blog_logo_og.png" />
     <meta property="og:site_name" content="My Awesome Blog" />
-   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="/style.css">
 </head>
 <body class="blog-index">
     <header>
-        <h1>{{ websiteName }}</h1>
+        <h1><a href="/index.html">{{ websiteName }}</a></h1>
         <nav class="primary-navigation">
             <ul>
-
                 {{ for page in pages }}
                 <li>
-                    <a href="index.html">{{ page.name }}</a>
+                    <a href="{{ page.link }}">{{ page.name }}</a>
                 </li>
                 {{ end }}
             </ul>
@@ -32,7 +31,7 @@
         <div class="main-content-area">
             {{ for post in posts }}
             <article>
-                <h2><a href="post.html">{{ post.title }}</a></h2>
+                <h2><a href="{{ post.link }}">{{ post.title }}</a></h2>
                 <p class="date">{{ post.date }}</p>
                 <p>{{ post.snippet }}</p>
             </article>
@@ -42,13 +41,13 @@
         <aside class="sidebar">
             <div class="widget connect-widget">
                 <h4>Connect</h4>
-                <p><a href="#rss-sidebar" class="rss-sidebar-link">Subscribe via RSS</a></p>
+                <p><a href="/rss.xml" class="rss-sidebar-link">Subscribe via RSS</a></p>
             </div>
             <div class="widget categories-widget">
                 <h4>Categories</h4>
                 <ul>
 
-                                    
+
                 <ul>
                     <li></li>
                 </ul>
@@ -65,7 +64,7 @@
                 <h4>Recent Posts</h4>
                 <ul>
                     {{ for recentpost in recentposts }}
-                    <li><a href="post.html">{{ recentpost.title }}</a></li>
+                    <li><a href="{{ recentpost.link }}">{{ recentpost.title }}</a></li>
                     {{ end }}
                 </ul>
             </div>
@@ -74,6 +73,6 @@
     <footer>
         <p>{{ websiteCopyright }}</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
 </body>
 </html>

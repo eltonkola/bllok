@@ -1,16 +1,22 @@
 package com.eltonkola.model
 
+import jdk.internal.vm.ThreadContainers.root
 import java.io.File
 
+
+data class BlogFile(
+    val parent: Category ?= null,
+    val file: File
+)
 data class Category(
     val directory: String,
     val name: String,
     val path: String,
     val subcategories: List<Category> = emptyList(),
-    val files : List<File>
+    val files : List<BlogFile>
 ){
     fun getPosts() : List<BlogPost> {
-        val posts = files.map { parseBlogPost(it.path) }
+        val posts = files.map { it.parseBlogPost() }
         return posts
     }
 
@@ -24,7 +30,7 @@ data class Category(
     }
 
     //For now, we will sort by file os date, not metadata o the file, that would be too expensive
-    fun getAllFiles() : List<File> {
+    fun getAllFiles() : List<BlogFile> {
         val childFiles = subcategories.map { it.getAllFiles() }.flatten()
         return listOf(files, childFiles).flatten()
     }
@@ -32,22 +38,22 @@ data class Category(
 
 fun buildCategoryTree(
     directory: File,
-    root: File = directory
+    root: File = directory,
+    parent: Category? = null
 ): Category {
     val subdirs = directory.listFiles()?.filter { it.isDirectory } ?: emptyList()
-    val files = directory.listFiles()?.filter { it.extension == "md" } ?: emptyList()
+    val files = directory.listFiles()?.filter { it.extension == "md" }?.map {
+        BlogFile(parent = parent, file = it)
+    } ?: emptyList()
 
-    val subcategories = subdirs.map { buildCategoryTree(it, root = root ) }
 
-    return Category(
+    val category = Category(
         directory = directory.path,
         name = directory.name,
         path = directory.relativeTo(root).path.replace(File.separatorChar, '/'),
         files = files,
-        subcategories = subcategories
+        subcategories = emptyList()
     )
-}
 
-fun File.toBlogPost(): BlogPost {
-    return parseBlogPost(this.path)
+    return category.copy(subcategories = subdirs.map { buildCategoryTree(it, root = root , parent = category)})
 }

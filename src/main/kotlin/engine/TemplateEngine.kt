@@ -1,13 +1,12 @@
+import com.eltonkola.model.BllokConfig
 import com.eltonkola.model.BlogPost
+import com.eltonkola.model.Category
 
-
-
-data class Page(val name: String)
-data class Nav(val name: String)
-data class Category(
+data class Page(
     val name: String,
-    val subCategories: List<Category> = emptyList()
+    val link: String
 )
+data class Nav(val name: String)
 data class Post(val title: String, val date: String, val snippet: String, val content: String)
 
 // Template context that holds all variables
@@ -40,7 +39,7 @@ sealed class Token {
 
 // Main templating engine
 class TemplateEngine(
-    private val partialsDirectory: String = "partials"
+    private val options: BllokConfig
 ) {
 
     private val partials = mutableMapOf<String, String>()
@@ -57,8 +56,7 @@ class TemplateEngine(
         }
 
         // Try to load from file
-        val fileName = "${name}.html"
-        val filePath = "$partialsDirectory/$fileName"
+        val filePath = "${options.templatePath}/partial_${name}.html"
 
         return try {
             val template = java.io.File(filePath).readText()
@@ -403,7 +401,7 @@ class TemplateEngine(
                             if (contextData != null) {
                                 println("Debug: Passing to partial '${token.name}': ${contextData}")
                                 if (contextData is Category) {
-                                    println("Debug: Category has ${contextData.subCategories.size} subcategories")
+                                    println("Debug: Category has ${contextData.subcategories.size} subcategories")
                                 }
                                 // Corrected map merging order:
                                 // The new "this" (from mapOf("this" to contextData)) should take precedence.
@@ -455,6 +453,7 @@ class TemplateEngine(
         val result = when (obj) {
             is Page -> when (property) {
                 "name" -> obj.name
+                "link" -> obj.link
                 else -> null
             }
             is Nav -> when (property) {
@@ -463,8 +462,9 @@ class TemplateEngine(
             }
             is Category -> when (property) {
                 "name" -> obj.name
-                "subCategories" -> obj.subCategories
-                "hasKids" -> obj.subCategories.isNotEmpty()
+                "subCategories" -> obj.subcategories
+                "link" -> obj.path
+                "hasKids" -> obj.subcategories.isNotEmpty()
                 else -> null
             }
             is BlogPost -> when (property) {
@@ -472,6 +472,7 @@ class TemplateEngine(
                 "date" -> obj.metadata.date
                 "snippet" -> obj.snippet
                 "content" -> obj.content
+                "link" -> obj.link
                 else -> null
             }
             else -> null
@@ -479,7 +480,7 @@ class TemplateEngine(
 
         // Debug output
         if (obj is Category && property == "subCategories") {
-            println("Debug: Getting subCategories from ${obj.name}: ${obj.subCategories.map { it.name }}")
+            println("Debug: Getting subCategories from ${obj.name}: ${obj.subcategories.map { it.name }}")
         }
 
         return result

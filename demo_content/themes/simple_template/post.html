@@ -1,7 +1,71 @@
-<h1>{{ websiteName }}</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ websiteName }}</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml" />
+</head>
+<body>
+<header>
+  <h1>{{ websiteName }}</h1>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <article>
-    <h2>{{ post.title }}</h2>
-    <p>{{ post.date }}</p>
-    <div>{{ post.content }}</div>
-  </article>
+<div class="container">
+  <main>
+    <nav aria-label="Breadcrumb">
+      <p>
+        {{ for nav in navs }}
+        <a>{{ nav.name }}</a> >>
+        {{ end }}
+      </p>
+
+    </nav>
+
+    <article>
+      <header>
+        <h2>{{ post.title }}</h2>
+        <p><time datetime="2025-06-01">{{ post.date }}</time></p>
+      </header>
+
+      <p>
+        {{ post.content }}
+      </p>
+    </article>
+  </main>
+
+  <aside>
+    <p><a href="/rss.xml" aria-label="RSS Feed">&#128241; RSS</a></p>
+
+    <section>
+      <h3>Categories</h3>
+      <ul class="tree">
+        <li>Programming
+          <ul class="tree">
+            <li>Web</li>
+            <li>Mobile</li>
+          </ul>
+        </li>
+        <li>Life</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Latest Posts</h3>
+      <ul>
+        {{ for recentpost in recentposts }}
+        <li><a href="article.html">{{ recentpost.title }}</a></li>
+        {{ end }}
+      </ul>
+    </section>
+  </aside>
+</div>
+</body>
+</html>

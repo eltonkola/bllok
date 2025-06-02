@@ -25,7 +25,7 @@ fun renderRssFeed(
     }
 
     val rssXml = generator.generate(items)
-    println(rssXml)
+    //println(rssXml)
 
     File(options.outputPath,"rss.xml").writeText(rssXml)
 }
