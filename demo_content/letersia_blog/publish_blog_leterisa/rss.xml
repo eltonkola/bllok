@@ -5,62 +5,62 @@
 <link>https://localhost:8000</link>
 <description>Letersia nga fajtori web</description>
 <language>en-us</language>
-<lastBuildDate>Mon, 2 Jun 2025 11:35:47 -0400</lastBuildDate>
+<lastBuildDate>Tue, 3 Jun 2025 12:26:51 -0400</lastBuildDate>
 <docs>https://www.rssboard.org/rss-specification</docs>
 <generator>Simple Kotlin RSS Generator</generator>
 <item>
 <title>About</title>
-<description>Në fillimet e letërsisë shqiptare janë veprat e Marin Barletit (&quot;Historia e Skënder-beut&quot;, 1508) dhe të humanistëve të tjerë, të botuara latinisht. Libri i parë shqip është &quot;Me-shari&quot; (1555) i Gjon Buzukut. Letërsia e vjetër përfaqësohet nga vepra fetare, por që ishin shpre-hje e qëndresës kundër...</description>
+<description>&lt;body&gt;&lt;p&gt;Në fillimet e letërsisë shqiptare janë veprat e Marin Barletit (&amp;quot;Historia e Skënder-beut&amp;quot;, 1508) dhe të humanistëve të tjerë, të botuara latinisht. Libri i parë shqip është &amp;quot;Me-shari&amp;quot; (1555) i Gjon Buzukut. Letërsia e vjetër përfaqësohet nga vepra fetare, por që ishin...</description>
 <link>https://localhost:8000/About</link>
-<pubDate>Mon, 2 Jun 2025 11:35:47 -0400</pubDate>
+<pubDate>Tue, 3 Jun 2025 12:26:51 -0400</pubDate>
 </item>
 <item>
 <title>Contact</title>
-<description>Në fillimet e letërsisë shqiptare janë veprat e Marin Barletit (&quot;Historia e Skënder-beut&quot;, 1508) dhe të humanistëve të tjerë, të botuara latinisht. Libri i parë shqip është &quot;Me-shari&quot; (1555) i Gjon Buzukut. Letërsia e vjetër përfaqësohet nga vepra fetare, por që ishin shpre-hje e qëndresës kundër...</description>
+<description>&lt;body&gt;&lt;p&gt;Në fillimet e letërsisë shqiptare janë veprat e Marin Barletit (&amp;quot;Historia e Skënder-beut&amp;quot;, 1508) dhe të humanistëve të tjerë, të botuara latinisht. Libri i parë shqip është &amp;quot;Me-shari&amp;quot; (1555) i Gjon Buzukut. Letërsia e vjetër përfaqësohet nga vepra fetare, por që ishin...</description>
 <link>https://localhost:8000/Contact</link>
-<pubDate>Mon, 2 Jun 2025 11:35:47 -0400</pubDate>
+<pubDate>Tue, 3 Jun 2025 12:26:51 -0400</pubDate>
 </item>
 <item>
 <title>Info</title>
-<description>Në fillimet e letërsisë shqiptare janë veprat e Marin Barletit (&quot;Historia e Skënder-beut&quot;, 1508) dhe të humanistëve të tjerë, të botuara latinisht. Libri i parë shqip është &quot;Me-shari&quot; (1555) i Gjon Buzukut. Letërsia e vjetër përfaqësohet nga vepra fetare, por që ishin shpre-hje e qëndresës kundër...</description>
+<description>&lt;body&gt;&lt;p&gt;Në fillimet e letërsisë shqiptare janë veprat e Marin Barletit (&amp;quot;Historia e Skënder-beut&amp;quot;, 1508) dhe të humanistëve të tjerë, të botuara latinisht. Libri i parë shqip është &amp;quot;Me-shari&amp;quot; (1555) i Gjon Buzukut. Letërsia e vjetër përfaqësohet nga vepra fetare, por që ishin...</description>
 <link>https://localhost:8000/Info</link>
-<pubDate>Mon, 2 Jun 2025 11:35:47 -0400</pubDate>
+<pubDate>Tue, 3 Jun 2025 12:26:51 -0400</pubDate>
 </item>
 <item>
 <title>Links</title>
-<description>Në fillimet e letërsisë shqiptare janë veprat e Marin Barletit (&quot;Historia e Skënder-beut&quot;, 1508) dhe të humanistëve të tjerë, të botuara latinisht. Libri i parë shqip është &quot;Me-shari&quot; (1555) i Gjon Buzukut. Letërsia e vjetër përfaqësohet nga vepra fetare, por që ishin shpre-hje e qëndresës kundër...</description>
+<description>&lt;body&gt;&lt;p&gt;Në fillimet e letërsisë shqiptare janë veprat e Marin Barletit (&amp;quot;Historia e Skënder-beut&amp;quot;, 1508) dhe të humanistëve të tjerë, të botuara latinisht. Libri i parë shqip është &amp;quot;Me-shari&amp;quot; (1555) i Gjon Buzukut. Letërsia e vjetër përfaqësohet nga vepra fetare, por që ishin...</description>
 <link>https://localhost:8000/Links</link>
-<pubDate>Mon, 2 Jun 2025 11:35:47 -0400</pubDate>
+<pubDate>Tue, 3 Jun 2025 12:26:51 -0400</pubDate>
 </item>
 <item>
 <title>Hyrje</title>
-<description>Letërsia e vjetër shqiptare lindi dhe u zhvillua në mesjetë, kur vendi ynë nën zgjedhën osmane, në kushtet e shoqërisë feudale, ku ideologjia sunduese ishte ideologjia fetare. Prandaj edhe përmbajtja e saj është kryesisht fetare. Të nisur nisur nga qëllime atdhetare, shkrimtarët e kësaj periudhe...</description>
+<description>&lt;body&gt;&lt;p&gt;Letërsia e vjetër shqiptare lindi dhe u zhvillua në mesjetë, kur vendi ynë nën zgjedhën osmane, në kushtet e shoqërisë feudale, ku ideologjia sunduese ishte ideologjia fetare. Prandaj edhe përmbajtja e saj është kryesisht fetare. Të nisur nisur nga qëllime atdhetare, shkrimtarët e kësaj...</description>
 <link>https://localhost:8000/Hyrje</link>
-<pubDate>Mon, 2 Jun 2025 11:35:47 -0400</pubDate>
+<pubDate>Tue, 3 Jun 2025 12:26:51 -0400</pubDate>
 </item>
 <item>
 <title>Marin Barleti</title>
-<description>Historiani i shquar Marin Barleti është figura më e madhe e lëvizjes së humanistëve shqiptarë të shekujve XV-XVI. Ai lindi rreth vitit 1460 në Shkodër. Fare i ri, më 1478, mori pjesë me armë në luftën për mbrojtjen e qytetit të lindjes nga rrethimi i forcave osmane. Heroizmi i bashkatdhetarëve i...</description>
+<description>&lt;body&gt;&lt;p&gt;Historiani i shquar Marin Barleti është figura më e madhe e lëvizjes së humanistëve shqiptarë të shekujve XV-XVI. Ai lindi rreth vitit 1460 në Shkodër. Fare i ri, më 1478, mori pjesë me armë në luftën për mbrojtjen e qytetit të lindjes nga rrethimi i forcave osmane. Heroizmi i...</description>
 <link>https://localhost:8000/Marin Barleti</link>
-<pubDate>Mon, 2 Jun 2025 11:35:47 -0400</pubDate>
+<pubDate>Tue, 3 Jun 2025 12:26:51 -0400</pubDate>
 </item>
 <item>
 <title>Gjon Buzuku</title>
-<description>Gjon Buzuku është autori i parë i njohur deri më sot i letërsisë shqiptare. Veprat në gjuhën shqipe gjatë shekujve të parë të pushtimit osman janë të pakta. Më e vjetra prej tyre që ka mbëritur deri në ditët tona, është &quot;Meshari„ i Gjon Buzukut (1555). Kush ishte autori, nga ishte, ku punoi, mbi...</description>
+<description>&lt;body&gt;&lt;p&gt;Gjon Buzuku është autori i parë i njohur deri më sot i letërsisë shqiptare. Veprat në gjuhën shqipe gjatë shekujve të parë të pushtimit osman janë të pakta. Më e vjetra prej tyre që ka mbëritur deri në ditët tona, është &amp;quot;Meshari„ i Gjon Buzukut (1555). Kush ishte autori, nga ishte, ku...</description>
 <link>https://localhost:8000/Gjon Buzuku</link>
-<pubDate>Mon, 2 Jun 2025 11:35:47 -0400</pubDate>
+<pubDate>Tue, 3 Jun 2025 12:26:51 -0400</pubDate>
 </item>
 <item>
 <title>Pjetër Bogdani</title>
-<description>Pjetër Bogdani është figura më e shquar e letërsisë së vjetër shqiptare. Ai shquhet jo vetëm si klerik i lartë, por edhe si atdhetar, me një dashuri të pakufi për gjuhën shqipe e për popullin shqiptar, por edhe si dijetar e letrar, si luftëtar i paepur për çlirimin e vendit nga zgjedha osmane dhe...</description>
+<description>&lt;body&gt;&lt;p&gt;Pjetër Bogdani është figura më e shquar e letërsisë së vjetër shqiptare. Ai shquhet jo vetëm si klerik i lartë, por edhe si atdhetar, me një dashuri të pakufi për gjuhën shqipe e për popullin shqiptar, por edhe si dijetar e letrar, si luftëtar i paepur për çlirimin e vendit nga zgjedha...</description>
 <link>https://localhost:8000/Pjetër Bogdani</link>
-<pubDate>Mon, 2 Jun 2025 11:35:47 -0400</pubDate>
+<pubDate>Tue, 3 Jun 2025 12:26:51 -0400</pubDate>
 </item>
 <item>
 <title>Pjetër Budi</title>
-<description>Pjetër Budi është një nga figurat më të shquara të botës shqiptare për kohën kur jetoi. Ai u përket atyre klerikëve, që u dalluan për një veprimtari të dendur atdhetare. Ishte organizator dhe udhëheqës i masave popullore në luftën për çlirim nga zgjedha osmane, përkthyes dhe krijues origjinal në...</description>
+<description>&lt;body&gt;&lt;p&gt;Pjetër Budi është një nga figurat më të shquara të botës shqiptare për kohën kur jetoi. Ai u përket atyre klerikëve, që u dalluan për një veprimtari të dendur atdhetare. Ishte organizator dhe udhëheqës i masave popullore në luftën për çlirim nga zgjedha osmane, përkthyes dhe krijues...</description>
 <link>https://localhost:8000/Pjetër Budi</link>
-<pubDate>Mon, 2 Jun 2025 11:35:47 -0400</pubDate>
+<pubDate>Tue, 3 Jun 2025 12:26:51 -0400</pubDate>
 </item>
 </channel>
 </rss>

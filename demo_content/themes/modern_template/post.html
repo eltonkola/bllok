@@ -18,7 +18,7 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Blog Post Title 1 - My Awesome Blog",
+  "headline": "{{ post.title }}",
   "description": "A concise summary of 'Blog Post Title 1' discussing its key points and insights. This should be unique for each article.",
   "image": {
     "@type": "ImageObject",
@@ -61,7 +61,7 @@
                 <li>
                     <a href="{{ page.link }}">{{ page.name }}</a>
                 </li>
-                {{ end }}
+                {{ endfor }}
             </ul>
         </nav>
 
@@ -71,11 +71,18 @@
         <div class="main-content-area">
             <article>
                 <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                    <ol>
+                        {{ for nav in navs }}
+                        <li><a href="{{ nav.link }}">{{ nav.name }}</a></li>
+                        {{ endfor }}
+                    </ol>
+                </nav>
 
 
                         <h2>{{ post.title }}</h2>
                         <p>{{ post.date }}</p>
                         <div>{{ post.content }}</div>
+
 
          </article>
         </div>
@@ -96,7 +103,7 @@
 
                     {{ for category in categories }}
                     {{ partial categoryItem with category }}
-                    {{ end }}
+                    {{ endfor }}
 
 
                 </ul>
@@ -106,13 +113,13 @@
                 <ul>
                     {{ for recentpost in recentposts }}
                     <li><a href="{{ recentpost.link }}">{{ recentpost.title }}</a></li>
-                    {{ end }}
+                    {{ endfor }}
                 </ul>
             </div>
         </aside>
     </main>
     <footer>
-        <p>&copy; 2023 My Awesome Blog</p>
+        <p>{{ websiteCopyright }}</p>
     </footer>
     <script src="/script.js"></script>
 </body>

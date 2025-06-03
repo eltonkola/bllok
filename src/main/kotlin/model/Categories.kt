@@ -1,6 +1,5 @@
 package com.eltonkola.model
 
-import jdk.internal.vm.ThreadContainers.root
 import java.io.File
 
 

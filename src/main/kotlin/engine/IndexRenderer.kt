@@ -2,6 +2,7 @@ package com.eltonkola.engine
 
 import Nav
 import Page
+import PagingItem
 import TemplateContext
 import TemplateEngine
 import com.eltonkola.model.BllokConfig
@@ -11,37 +12,44 @@ import com.eltonkola.model.BlogPost
 import com.eltonkola.model.Category
 import com.eltonkola.model.parseBlogPost
 import java.io.File
+import kotlin.collections.List
 
 fun pageRenderer(
     categories: List<Category>,
     pages: List<Page>,
+    paging : List<PagingItem>,
     options: BllokConfig,
     config: BlogConfig,
     pageFiles: List<BlogFile>,
     recentsFiles : List<BlogFile>,
     templatePage: String,
     fileName: String,
-    post: BlogPost? = null
+    post: BlogPost? = null,
+    navs: List<Nav> = emptyList()
 ) {
 
     val posts = pageFiles.map { it.parseBlogPost() }
     val recents = recentsFiles.map { it.parseBlogPost() }
 
-    val navs = listOf(
-        Nav("News"),
-        Nav("Flash")
-    )
-
     val context = TemplateContext(
         mapOfNotNull(
             "websiteName" to config.websiteName,
-            "websiteCopyright" to config.copyright,
+            "websiteCopyright" to config.websiteCopyright,
+            "websiteDescription" to config.websiteDescription,
+            "baseUrl" to config.baseUrl,
+
+            "feedEmail" to config.feedEmail,
+            "feedEmailRealName" to config.feedEmailRealName,
+            "socials" to config.socials,
+            "language" to config.language,
+
             "pages" to pages,
             "navs" to navs,
             "categories" to categories,
             "posts" to posts,
             "recentposts" to recents,
-            "post" to post
+            "post" to post,
+            "paging" to paging
         )
     )
 

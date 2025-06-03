@@ -2,7 +2,7 @@ package com.eltonkola
 
 import com.eltonkola.model.BllokConfig
 import com.eltonkola.model.buildCategoryTree
-import com.eltonkola.model.parseTomlConfig
+import com.eltonkola.model.parseYamlConfig
 import java.io.File
 import java.time.Instant
 import kotlin.system.exitProcess
@@ -47,7 +47,7 @@ class Bllok(
         println("outputPath: ${options.outputPath}")
 
         //blog settings
-        val config = parseTomlConfig("${options.inputPath}/bllok.toml")
+        val config = parseYamlConfig("${options.inputPath}/bllok.yaml")
         //tree of blog pages to create
         val contentTree = buildCategoryTree(directory = File(options.inputPath))
 

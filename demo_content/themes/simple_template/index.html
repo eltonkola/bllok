@@ -22,42 +22,51 @@
   <div class="max-w-5xl mx-auto px-4 py-4 flex justify-center space-x-6 text-gray-700 text-sm font-medium">
     <a href="/" class="hover:text-indigo-600">Home</a>
     {{ for page in pages }}
-    <a href="{{ page.link }}" class="hover:text-indigo-600">{{ page.title }}</a>
-    {{ end }}
+    <a href="{{ page.link }}" class="hover:text-indigo-600">{{ page.name }}</a>
+    {{ endfor }}
   </div>
 </nav>
 
+
 <!-- Main Content -->
 <main class="max-w-5xl mx-auto px-4 py-12 grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-12">
-
   <!-- Blog Posts -->
   <section class="space-y-10">
+
+
+
     {{ for post in posts }}
     <article class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
       <h2 class="text-2xl font-semibold mb-1"><a href="{{ post.link }}" class="hover:text-indigo-600">{{ post.title }}</a></h2>
       <p class="text-sm text-gray-500 mb-2">{{ post.date }}</p>
       <p class="text-gray-700">{{ post.snippet }}</p>
     </article>
-    {{ end }}
+    {{ endfor }}
 
     <!-- Pagination -->
     <div class="mt-12 flex justify-center">
       <nav class="inline-flex items-center space-x-1 text-sm">
-        <!-- Prev -->
-        <a href="#" class="px-3 py-1 rounded border text-gray-600 hover:bg-gray-100">Prev</a>
 
-        <!-- Page Numbers -->
-        <a href="#" class="px-3 py-1 rounded border text-gray-600 hover:bg-gray-100">1</a>
-        <a href="#" class="px-3 py-1 rounded border text-gray-600 hover:bg-gray-100">2</a>
-        <span class="px-3 py-1 rounded border border-indigo-600 bg-indigo-50 text-indigo-700 font-medium">3</span>
-        <a href="#" class="px-3 py-1 rounded border text-gray-600 hover:bg-gray-100">4</a>
-        <span class="px-3 py-1 text-gray-500">...</span>
-        <a href="#" class="px-3 py-1 rounded border text-gray-600 hover:bg-gray-100">10</a>
+        {{ for pageStep in paging }}
+          {{ if pageStep.selected }}
+          <span class="px-3 py-1 rounded border border-indigo-600 bg-indigo-50 text-indigo-700 font-medium">{{ pageStep.label }}</span>
+          {{ else }}
+          <a href="{{ pageStep.link }}" class="px-3 py-1 rounded border text-gray-600 hover:bg-gray-100">{{ pageStep.label }}</a>
+          {{ endif }}
+        {{ endfor }}
 
-        <!-- Next -->
-        <a href="#" class="px-3 py-1 rounded border text-gray-600 hover:bg-gray-100">Next</a>
+<!--        <span class="px-3 py-1 text-gray-500">...</span>-->
+
       </nav>
     </div>
+
+
+
+    {{ if posts }}
+    {{ else }}
+    <p>No posts found.</p>
+    {{ endif }}
+
 
   </section>
 
@@ -73,11 +82,16 @@
     <!-- Categories -->
     <div>
       <h3 class="text-lg font-semibold mb-2 border-b pb-1">📁 Categories</h3>
-      <ul class="text-sm space-y-1 text-gray-700">
+      <ul class="text-sm space-y-1 text-gray-700 tree-simple">
+
+      </ul>
+
+      <ul class="text-sm space-y-1 text-gray-700 list-none pl-0">
         {{ for category in categories }}
         {{ partial categoryItem with category }}
-        {{ end }}
+        {{ endfor }}
       </ul>
+
     </div>
 
     <!-- Latest Posts -->
@@ -86,7 +100,7 @@
       <ul class="text-sm space-y-1 text-gray-700">
         {{ for recentpost in recentposts }}
         <li><a href="{{ recentpost.link }}" class="hover:underline">{{ recentpost.title }}</a></li>
-        {{ end }}
+        {{ endfor }}
       </ul>
     </div>
   </aside>

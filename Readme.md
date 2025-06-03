@@ -25,19 +25,27 @@ categoryItem partial:
     </a> 
     {{ if this.subCategories }}
         <span class="category-toggle">[+]</span>
-    {{ end }}
+    {{ endif }}
     <ul>
          {{ for subcategory in this.subCategories }}
             {{ partial categoryItem with subcategory }}
-        {{ end }}
+        {{ endfor }}
     </ul>
  </li>
 
 
 {{ for recentpost in recentposts }}
 <a href="{{ recentpost.link }}">{{ recentpost.title }}</a>
-{{ end }}
+{{ endfor }}
 
 
 
+{{ websiteName }}
+{{ websiteDescription }}
+{{ baseUrl }}
+{{ feedEmail }}
+{{ feedEmailRealName }}
+{{ socials }}
+{{ language }}
 {{ websiteCopyright }}
+

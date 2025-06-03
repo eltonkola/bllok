@@ -1,14 +1,15 @@
 
  <li class="has-children">
-    <a href="/{{this.link}}" class="category-parent-link">
+    <a href="{{this.link}}" class="category-parent-link">
         {{ this.name }}
     </a> 
     {{ if this.subCategories }}
         <span class="category-toggle">[+]</span>
-    {{ end }}
+     {{ else }}
+    {{ endif }}
     <ul>
          {{ for subcategory in this.subCategories }}
             {{ partial categoryItem with subcategory }}
-        {{ end }}
+        {{ endfor }}
     </ul>
  </li>

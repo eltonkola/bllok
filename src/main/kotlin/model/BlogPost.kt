@@ -1,5 +1,6 @@
 package com.eltonkola.model
 
+import Nav
 import jdk.internal.vm.ThreadContainers.root
 import org.intellij.markdown.flavours.commonmark.CommonMarkFlavourDescriptor
 import org.intellij.markdown.html.HtmlGenerator
@@ -28,6 +29,24 @@ data class BlogPost(
 ){
 
     val snippet get() = extractPreview(content)
+}
+
+fun String.toBreadcrumbNavs(): List<Nav> {
+    val parts = this.trim('/').split('/')
+    val navs = mutableListOf<Nav>()
+    var currentPath = ""
+
+    for ((index, part) in parts.withIndex()) {
+        val cleanPart = part.removeSuffix(".html")
+        val name = cleanPart.replace("-", " ")
+            .split(" ")
+            .joinToString(" ") { it.replaceFirstChar(Char::uppercaseChar) }
+
+        currentPath += "/$part"
+        navs.add(Nav(name = name, link = currentPath))
+    }
+
+    return navs
 }
 
 fun extractPreview(body: String, maxLength: Int = 300): String {

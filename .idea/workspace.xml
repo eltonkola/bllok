@@ -5,11 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10316bd1-959f-4af0-bb94-797a5920e597" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo_content/themes/simple_template/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/RenderElton.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/engine/ForLoop.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/engine/IfCondition.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/RenderLetersia.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/blog_leterisa/Pages/Hyrje.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/blog/bllok.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/About.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/About.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Android/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Android/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Pages/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Projects/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Projects/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Random/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Random/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Welcome Back.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Welcome Back.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/rss.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/rss.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/blog_leterisa/bllok.toml" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/blog_leterisa/bllok.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_10.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_10.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_11.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_11.html" afterDir="false" />
@@ -17,7 +30,7 @@
       <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_13.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_13.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_14.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_14.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_15.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_15.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_16.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_16.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_16.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_4.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_4.html" afterDir="false" />
@@ -27,19 +40,22 @@
       <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_8.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_8.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_9.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_9.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/rss.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/rss.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/bllok.toml" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/bllok.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo_content/themes/modern_template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/modern_template/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/themes/modern_template/partials/categoryItem.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/themes/modern_template/partial_categoryItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/modern_template/partial_categoryItem.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo_content/themes/modern_template/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/modern_template/post.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo_content/themes/simple_template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/simple_template/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/themes/simple_template/partial_categoryItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/simple_template/partial_categoryItem.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo_content/themes/simple_template/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/simple_template/post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/themes/simple_template/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/simple_template/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Bllok.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Bllok.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/BllokGenerator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/BllokGenerator.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/engine/IndexRenderer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/engine/IndexRenderer.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/engine/TemplateEngine.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/engine/TemplateEngine.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/engine/rss/RssRenderer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/engine/rss/RssRenderer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/model/BlogConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/BlogConfig.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/model/BlogPost.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/BlogPost.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/model/Categories.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/Categories.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/model/mock.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/RenderElton.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/RenderElton.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +107,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="kotlin.jupyter.empty" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -117,21 +134,26 @@
     "Kotlin.BlogParserKt.executor": "Run",
     "Kotlin.MainKt.executor": "Run",
     "Kotlin.RenderEltonKt.executor": "Run",
+    "Kotlin.RenderLetersiaKt.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/test/Documents/GitHub/bllok/src/test/kotlin",
     "onboarding.tips.debug.path": "C:/Users/test/Documents/GitHub/bllok/src/main/kotlin/Main.kt",
     "settings.editor.selected.configurable": "advanced.settings"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\test\Documents\GitHub\bllok\src\test\kotlin" />
+    </key>
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
       <recent name="com.eltonkola.model" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.RenderEltonKt">
+  <component name="RunManager" selected="Kotlin.RenderLetersiaKt">
     <configuration name="BllokKt" type="JetRunConfigurationType" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.eltonkola.BllokKt" />
       <module name="bllok.main" />
@@ -148,12 +170,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RenderLetersiaKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RenderLetersiaKt" />
+      <module name="bllok.test" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Kotlin.BllokKt" />
       <item itemvalue="Kotlin.RenderEltonKt" />
+      <item itemvalue="Kotlin.RenderLetersiaKt" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.RenderLetersiaKt" />
         <item itemvalue="Kotlin.RenderEltonKt" />
       </list>
     </recent_temporary>

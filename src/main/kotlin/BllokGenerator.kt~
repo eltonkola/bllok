@@ -12,7 +12,6 @@ import com.eltonkola.model.BlogFile
 import com.eltonkola.model.BlogPost
 import com.eltonkola.model.Category
 import com.eltonkola.model.parseBlogPost
-import com.eltonkola.model.toBreadcrumbNavs
 import java.io.File
 
 class BllokGenerator(
@@ -175,6 +174,12 @@ class BllokGenerator(
         recents: List<BlogFile>
         ){
 
+        val navs =post.getNav()
+
+
+
+
+
         pageRenderer(
             categories = blogCategories,
             pages = blogPages,
@@ -186,7 +191,7 @@ class BllokGenerator(
             templatePage = "post.html",
             fileName =  post.link,
             post = post,
-            navs = post.link.toBreadcrumbNavs()
+            navs = navs
         )
 
     }
