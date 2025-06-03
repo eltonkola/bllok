@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZeroDay Chronicle | Security Insights</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0a0a0a',
+                        panel: '#111111',
+                        accent: '#00cc66',
+                        accent2: '#4d88ff',
+                        text: '#cccccc',
+                        code: '#1a1a1a',
+                        border: '#222222'
+                    },
+                    fontFamily: {
+                        mono: ['"IBM Plex Mono"', 'monospace'],
+                        sans: ['"Inter"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #cccccc;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+        
+        .header-gradient {
+            background: linear-gradient(90deg, #0a0a0a 0%, #111111 50%, #0a0a0a 100%);
+        }
+        
+        .content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.75;
+        }
+        
+        .content h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .content h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 3rem;
+            height: 2px;
+            background: linear-gradient(90deg, #00cc66, #4d88ff);
+        }
+        
+        .content ul, .content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        
+        .content li {
+            margin-bottom: 0.75rem;
+            position: relative;
+        }
+        
+        .content li::before {
+            content: '▹';
+            position: absolute;
+            left: -1.5rem;
+            color: #00cc66;
+        }
+        
+        .content blockquote {
+            border-left: 3px solid #4d88ff;
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #999999;
+        }
+        
+        .content a {
+            color: #4d88ff;
+            text-decoration: none;
+            border-bottom: 1px dashed #4d88ff;
+            transition: all 0.3s ease;
+        }
+        
+        .content a:hover {
+            color: #00cc66;
+            border-bottom: 1px solid #00cc66;
+        }
+        
+        .content pre {
+            background-color: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 4px;
+            padding: 1rem;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        
+        .content code {
+            font-family: 'IBM Plex Mono', monospace;
+            color: #00cc66;
+            background-color: #1a1a1a;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }
+        
+        .article-card {
+            transition: all 0.3s ease;
+            border: 1px solid #222222;
+        }
+        
+        .article-card:hover {
+            border-color: #00cc66;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 204, 102, 0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+            padding-bottom: 2px;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #00cc66;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active-nav::after {
+            width: 100%;
+            background: #4d88ff;
+        }
+        
+        .tag {
+            transition: all 0.3s ease;
+        }
+        
+        .tag:hover {
+            background-color: #222222;
+            color: #00cc66;
+        }
+        
+        .breadcrumb li:not(:last-child)::after {
+            content: '/';
+            margin: 0 10px;
+            color: #666;
+        }
+        
+        .pagination-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .pagination-btn:hover {
+            background-color: #222222;
+            border-color: #00cc66;
+        }
+        
+        .sidebar-section {
+            border-bottom: 1px solid #222222;
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .sidebar-section:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+        
+        .category-tree li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        .subcategory {
+            padding-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .terminal-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 16px;
+            background: #00cc66;
+            margin-left: 4px;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 5px rgba(0, 204, 102, 0.5);
+        }
+        
+        .page-section {
+            min-height: calc(100vh - 400px);
+        }
+        
+        .terminal-window {
+            border: 1px solid #00cc66;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .terminal-header {
+            background: linear-gradient(90deg, #0a3a0a, #0a0a0a);
+            padding: 6px 10px;
+            border-bottom: 1px solid #00cc66;
+        }
+        
+        .terminal-body {
+            background-color: #0a0a0a;
+            padding: 15px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body class="font-sans bg-dark text-text">
+    <!-- Header -->
+    <header class="border-b border-border">
+        <div class="header-gradient">
+            <div class="container mx-auto px-4 py-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">
+                        <h1 class="text-2xl font-bold text-accent font-mono glow-text">ZeroDay<span class="text-accent2">Chronicle</span></h1>
+                        <p class="text-gray-600 text-sm mt-1">Security Research & Tactical Insights</p>
+                    </div>
+                    <nav>
+                        <ul class="flex flex-wrap justify-center gap-4 md:gap-6">
+                            <li><a href="#" class="nav-link active-nav text-text">Home</a></li>
+                            <li><a href="#" class="nav-link text-text">Articles</a></li>
+                            <li><a href="#" class="nav-link text-text">Exploits</a></li>
+                            <li><a href="#" class="nav-link text-text">Forensics</a></li>
+                            <li><a href="#" class="nav-link text-text">Resources</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-8 flex flex-col lg:flex-row gap-8">
+        <!-- Main Content - Article List -->
+        <main class="w-full lg:w-3/4">
+            <div class="page-section">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-2xl font-bold text-accent2">Latest Research Publications</h2>
+                    <div class="text-gray-500 text-sm">
+                        Showing 1-6 of 24 articles
+                    </div>
+                </div>
+
+                <!-- Articles Grid -->
+                <div class="grid md:grid-cols-2 gap-6 mb-12">
+                    <!-- Article Card 1 -->
+                    <article class="article-card bg-panel rounded-lg overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-xs text-gray-500">2023-10-12</span>
+                                <span class="text-xs bg-gray-800 text-accent px-2 py-1 rounded">NEW</span>
+                            </div>
+                            <h3 class="font-bold text-lg mb-3">Evading Modern EDR Solutions</h3>
+                            <p class="text-gray-500 text-sm mb-4">Advanced techniques for bypassing endpoint detection and response systems in enterprise environments.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tag text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">#tradecraft</span>
+                                    <span class="tag text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">#evasion</span>
+                                </div>
+                                <a href="#" class="text-accent2 text-sm font-mono">read();</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article Card 2 -->
+                    <article class="article-card bg-panel rounded-lg overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-xs text-gray-500">2023-10-05</span>
+                                <span class="text-xs bg-gray-800 text-accent2 px-2 py-1 rounded">POPULAR</span>
+                            </div>
+                            <h3 class="font-bold text-lg mb-3">Cloud Infrastructure Vulnerabilities</h3>
+                            <p class="text-gray-500 text-sm mb-4">Exploiting misconfigurations in cloud environments for persistent access and data extraction.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tag text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">#cloud</span>
+                                    <span class="tag text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">#pentest</span>
+                                </div>
+                                <a href="#" class="text-accent2 text-sm font-mono">read();</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article Card 3 -->
+                    <article class="article-card bg-panel rounded-lg overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-xs text-gray-500">2023-09-28</span>
+                                <span class="text-xs bg-gray-800 text-accent px-2 py-1 rounded">UPDATED</span>
+                            </div>
+                            <h3 class="font-bold text-lg mb-3">Memory-Resident Malware</h3>
+                            <p class="text-gray-500 text-sm mb-4">Developing payloads that operate exclusively in memory without touching disk storage.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tag text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">#malware</span>
+                                    <span class="tag text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">#forensics</span>
+                                </div>
+                                <a href="#" class="text-accent2 text-sm font-mono">read();</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article Card 4 -->
+                    <article class="article-card bg-panel rounded-lg overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-xs text-gray-500">2023-09-22</span>
+                            </div>
+                            <h3 class="font-bold text-lg mb-3">Secure Comms Protocols</h3>
+                            <p class="text-gray-500 text-sm mb-4">Implementing secure communication channels using cryptographic techniques and steganography.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tag text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">#crypto</span>
+                                    <span class="tag text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">#opsec</span>
+                                </div>
+                                <a href="#" class="text-accent2 text-sm font-mono">read();</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article Card 5 -->
+                    <article class="article-card bg-panel rounded-lg overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-xs text-gray-500">2023-09-15</span>
+                            </div>
+                            <h3 class="font-bold text-lg mb-3">Physical Security Bypasses</h3>
+                            <p class="text-gray-500 text-sm mb-4">Exploiting weaknesses in physical access control systems using non-destructive methods.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tag text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">#physical</span>
+                                    <span class="tag text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">#access</span>
+                                </div>
+                                <a href="#" class="text-accent2 text-sm font-mono">read();</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article Card 6 -->
+                    <article class="article-card bg-panel rounded-lg overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-xs text-gray-500">2023-09-08</span>
+                            </div>
+                            <h3 class="font-bold text-lg mb-3">Zero-Day Discovery Process</h3>
+                            <p class="text-gray-500 text-sm mb-4">Methodology for identifying and validating unknown vulnerabilities in common software.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tag text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">#research</span>
+                                    <span class="tag text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">#vulns</span>
+                                </div>
+                                <a href="#" class="text-accent2 text-sm font-mono">read();</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex justify-center items-center space-x-2 mb-12">
+                    <button class="pagination-btn w-10 h-10 flex items-center justify-center border border-border rounded">
+                        <i class="fas fa-chevron-left text-gray-500"></i>
+                    </button>
+                    <button class="pagination-btn w-10 h-10 flex items-center justify-center border border-accent bg-panel text-accent rounded font-medium">1</button>
+                    <button class="pagination-btn w-10 h-10 flex items-center justify-center border border-border rounded text-gray-400">2</button>
+                    <button class="pagination-btn w-10 h-10 flex items-center justify-center border border-border rounded text-gray-400">3</button>
+                    <span class="text-gray-600">...</span>
+                    <button class="pagination-btn w-10 h-10 flex items-center justify-center border border-border rounded text-gray-400">4</button>
+                    <button class="pagination-btn w-10 h-10 flex items-center justify-center border border-border rounded">
+                        <i class="fas fa-chevron-right text-gray-500"></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Sidebar -->
+        <aside class="w-full lg:w-1/4">
+            <div class="bg-panel border border-border rounded-lg p-6">
+                <!-- RSS Section -->
+                <div class="sidebar-section">
+                    <h3 class="text-lg font-bold mb-4 flex items-center">
+                        <i class="fas fa-rss mr-2 text-accent"></i> RSS Feeds
+                    </h3>
+                    <p class="text-gray-500 text-sm mb-4">Subscribe to our research feeds:</p>
+                    <div class="space-y-3">
+                        <a href="#" class="flex items-center text-accent2 font-mono text-sm">
+                            <i class="fas fa-external-link-alt mr-2"></i> /feeds/all.xml
+                        </a>
+                        <a href="#" class="flex items-center text-accent2 font-mono text-sm">
+                            <i class="fas fa-external-link-alt mr-2"></i> /feeds/exploits.xml
+                        </a>
+                        <a href="#" class="flex items-center text-accent2 font-mono text-sm">
+                            <i class="fas fa-external-link-alt mr-2"></i> /feeds/forensics.xml
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Categories Section -->
+                <div class="sidebar-section">
+                    <h3 class="text-lg font-bold mb-4 flex items-center">
+                        <i class="fas fa-sitemap mr-2 text-accent"></i> Research Categories
+                    </h3>
+                    <ul class="space-y-3 category-tree">
+                        <li>
+                            <a href="#" class="flex items-center text-gray-400 hover:text-accent">
+                                <i class="fas fa-folder-open mr-2 text-accent2"></i>
+                                <span>Exploit Development</span>
+                            </a>
+                            <ul class="subcategory space-y-2">
+                                <li>
+                                    <a href="#" class="flex items-center text-gray-500 hover:text-accent pl-5">
+                                        <i class="fas fa-angle-right mr-2 text-xs"></i>
+                                        <span>Kernel Exploits</span>
+                                   

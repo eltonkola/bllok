@@ -1,3 +1,4 @@
+import groovy.xml.dom.DOMCategory.attributes
 
 plugins {
     kotlin("jvm") version "2.1.20"
@@ -27,7 +28,7 @@ kotlin {
 }
 
 application {
-    mainClass.set("BlokKt")
+    mainClass.set("com.eltonkola.BllokKt")
 }
 
 tasks {
@@ -35,9 +36,11 @@ tasks {
 
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 
+
         manifest {
-            attributes["Main-Class"] = application.mainClass
+            attributes["Main-Class"] = application.mainClass.get()
         }
+
         // here zip stuff found in runtimeClasspath:
         from(configurations.runtimeClasspath.get().map {
             if (it.isDirectory) {
