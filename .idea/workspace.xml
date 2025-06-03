@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10316bd1-959f-4af0-bb94-797a5920e597" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/engine/ForLoop.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/engine/IfCondition.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/RenderLetersia.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Pages/About.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/RenderSkenderbeu.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/blog/bllok.toml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/About.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/About.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Android/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Android/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Contact.html" afterDir="false" />
@@ -20,42 +17,40 @@
       <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Welcome Back.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Welcome Back.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/rss.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/rss.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/blog_leterisa/bllok.toml" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/blog_leterisa/bllok.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_10.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_11.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_11.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_12.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_12.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_13.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_13.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_14.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_14.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_15.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_15.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_16.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_4.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_5.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_6.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_7.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_8.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_9.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/index_9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/rss.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/letersia_blog/publish_blog_leterisa/rss.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/bllok.toml" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/bllok.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/themes/modern_template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/modern_template/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/themes/modern_template/partial_categoryItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/modern_template/partial_categoryItem.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/themes/modern_template/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/modern_template/post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/themes/simple_template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/simple_template/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/themes/simple_template/partial_categoryItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/simple_template/partial_categoryItem.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/themes/simple_template/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/simple_template/post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/themes/simple_template/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/simple_template/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Bllok.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Bllok.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/1 Gusht, 1466, Duke Vështruar Arbërinë nga Maja e një Mali" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/1 Gusht, 1466, Duke Vështruar Arbërinë nga Maja e një Mali.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/10 Janar, 1468, Lezhë, Në Shtratin e Sëmundjes" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/10 Janar, 1468, Lezhë, Në Shtratin e Sëmundjes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/10 Korrik, 1460, Kampi në Rrethinat e Ohrit, Duke Vështruar Hartën e Ballkanit" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/10 Korrik, 1460, Kampi në Rrethinat e Ohrit, Duke Vështruar Hartën e Ballkanit.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/10 Qershor, 1457, Pranë Lumit Drin, Kur Plani Nuk Shkon Sipas Planit" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/10 Qershor, 1457, Pranë Lumit Drin, Kur Plani Nuk Shkon Sipas Planit.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/11 Nëntor, 1466, Kampi dimëror pranë Durrësit" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/11 Nëntor, 1466, Kampi dimëror pranë Durrësit.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/11 Shtator, 1464, Pas zbulimit të komplotit të Hamza Kastriotit" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/11 Shtator, 1464, Pas zbulimit të komplotit të Hamza Kastriotit.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/12 Prill, 1452, Kështjella e Krujës.txt" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/12 Prill, 1452, Kështjella e Krujës.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/12 Shtator, 1465, Duke Ecur Mes Rrënojave të një Katundi të Djegur nga Osmanët" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/12 Shtator, 1465, Duke Ecur Mes Rrënojave të një Katundi të Djegur nga Osmanët.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/12 Tetor, 1463, Romë, Në Oborrin Papnor" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/12 Tetor, 1463, Romë, Në Oborrin Papnor.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/14 Gusht, 1453, Pyjet e Mokrës, Gjurmë Armiku" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/14 Gusht, 1453, Pyjet e Mokrës, Gjurmë Armiku.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/14 Shkurt, 1459, Kështjella e Krujës, Një Çast Qetësie në Mes të Stuhisë" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/14 Shkurt, 1459, Kështjella e Krujës, Një Çast Qetësie në Mes të Stuhisë.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/15 Qershor, 1455, Kampi pranë Beratit, Pas një Stërvitjeje të Lodhshme" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/15 Qershor, 1455, Kampi pranë Beratit, Pas një Stërvitjeje të Lodhshme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/17 Korrik, 1467, Pas Rrethimit të Tretë të Krujës, Meditime Nën Yje" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/17 Korrik, 1467, Pas Rrethimit të Tretë të Krujës, Meditime Nën Yje.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/18 Maj, 1461, Në një pyll pranë Petrelës.txt" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/18 Maj, 1461, Në një pyll pranë Petrelës.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/19 Mars, 1454, Kampi pranë Danjës, Negociata të Vështira me Serenissimën" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/19 Mars, 1454, Kampi pranë Danjës, Negociata të Vështira me Serenissimën.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/2 Shtator, 1464, Pas Betejës së Ohrit (Vaikal)" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/2 Shtator, 1464, Pas Betejës së Ohrit (Vaikal).md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/20 Dhjetor, 1463, Duke u kthyer nga Roma, Mendime mbi Detin Adriatik" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/20 Dhjetor, 1463, Duke u kthyer nga Roma, Mendime mbi Detin Adriatik.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/20 Janar, 1462, Kështjella e Krujës, Dimër i Vështirë dhe Lidhja e Lezhës" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/20 Janar, 1462, Kështjella e Krujës, Dimër i Vështirë dhe Lidhja e Lezhës.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/22 Dhjetor, 1461, Kështjella e Petrelës, Një Natë e Gjatë Dimri" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/22 Dhjetor, 1461, Kështjella e Petrelës, Një Natë e Gjatë Dimri.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/22 Prill, 1463, Në një Shteg të Panjohur Malor, Gjurmë të Reja" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/22 Prill, 1463, Në një Shteg të Panjohur Malor, Gjurmë të Reja.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/25 Korrik, 1455, Fushë pranë Beratit.txt" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/25 Korrik, 1455, Fushë pranë Beratit.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/25 Korrik, 1464, Pas Betejës së Ohrit, Letër për Papën Pali II" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/25 Korrik, 1464, Pas Betejës së Ohrit, Letër për Papën Pali II.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/28 Gusht, 1458, Pranë Rrënojave të Apollonisë, Pëshpërima të së Kaluarës" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/28 Gusht, 1458, Pranë Rrënojave të Apollonisë, Pëshpërima të së Kaluarës.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/3 Dhjetor, 1458, Kështjella e Lezhës.txt" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/3 Dhjetor, 1458, Kështjella e Lezhës.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/3 Nëntor, 1462, Duke Udhëtuar Nëpër Malësinë e Veriut, Histori Rreth Zjarrit" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/3 Nëntor, 1462, Duke Udhëtuar Nëpër Malësinë e Veriut, Histori Rreth Zjarrit.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/30 Mars, 1456, Diku në Rrethinat e Sfetigradit" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/30 Mars, 1456, Diku në Rrethinat e Sfetigradit.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/30 Prill, 1467, Kështjella e Krujës, Duke Deshifruar Lëvizjet e Mehmetit" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/30 Prill, 1467, Kështjella e Krujës, Duke Deshifruar Lëvizjet e Mehmetit.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/5 Nëntor, 1460, Krujë, Pesha e Kurorës (ose e Përkrenares)" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/5 Nëntor, 1460, Krujë, Pesha e Kurorës (ose e Përkrenares).md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/5 Prill, 1461, Biblioteka e Manastirit të Ardenicës, Mes Teksteve të Vjetra" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/5 Prill, 1461, Biblioteka e Manastirit të Ardenicës, Mes Teksteve të Vjetra.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/5 Qershor, 1465, Nën Hijen e Malit të Tomorrit, Para një Beteje të Pritshme" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/5 Qershor, 1465, Nën Hijen e Malit të Tomorrit, Para një Beteje të Pritshme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/7 Maj, 1462, Kopshtet e Kështjellës së Krujës, Hapat e Parë të njëTrashëgimtari" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/skenderbeu_blog/skenderbeu_blog/Memorje/7 Maj, 1462, Kopshtet e Kështjellës së Krujës, Hapat e Parë të njëTrashëgimtari.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/BllokGenerator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/BllokGenerator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/engine/IndexRenderer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/engine/IndexRenderer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/engine/TemplateEngine.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/engine/TemplateEngine.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/model/BlogConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/BlogConfig.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/model/BlogPost.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/BlogPost.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/model/Categories.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/Categories.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/RenderElton.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/RenderElton.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,25 +130,31 @@
     "Kotlin.MainKt.executor": "Run",
     "Kotlin.RenderEltonKt.executor": "Run",
     "Kotlin.RenderLetersiaKt.executor": "Run",
+    "Kotlin.RenderSkenderbeuKt.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/test/Documents/GitHub/bllok/src/test/kotlin",
+    "last_opened_file_path": "C:/Users/test/Documents/GitHub/bllok/demo_content/skenderbeu_blog/skenderbeu_blog/Pages",
     "onboarding.tips.debug.path": "C:/Users/test/Documents/GitHub/bllok/src/main/kotlin/Main.kt",
     "settings.editor.selected.configurable": "advanced.settings"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\test\Documents\GitHub\bllok\demo_content\skenderbeu_blog\skenderbeu_blog\Pages" />
       <recent name="C:\Users\test\Documents\GitHub\bllok\src\test\kotlin" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\test\Documents\GitHub\bllok\demo_content\skenderbeu_blog\skenderbeu_blog" />
+      <recent name="C:\Users\test\Documents\GitHub\bllok\demo_content\skenderbeu_blog\skenderbeu_blog\Memorje" />
     </key>
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
       <recent name="com.eltonkola.model" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.RenderLetersiaKt">
+  <component name="RunManager" selected="Kotlin.RenderSkenderbeuKt">
     <configuration name="BllokKt" type="JetRunConfigurationType" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.eltonkola.BllokKt" />
       <module name="bllok.main" />
@@ -177,15 +178,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RenderSkenderbeuKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RenderSkenderbeuKt" />
+      <module name="bllok.test" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Kotlin.BllokKt" />
       <item itemvalue="Kotlin.RenderEltonKt" />
       <item itemvalue="Kotlin.RenderLetersiaKt" />
+      <item itemvalue="Kotlin.RenderSkenderbeuKt" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.RenderLetersiaKt" />
+        <item itemvalue="Kotlin.RenderSkenderbeuKt" />
         <item itemvalue="Kotlin.RenderEltonKt" />
+        <item itemvalue="Kotlin.RenderLetersiaKt" />
       </list>
     </recent_temporary>
   </component>
@@ -198,5 +208,26 @@
       <updated>1748694274612</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/BllokGenerator.kt</url>
+          <line>186</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/model/BlogPost.kt</url>
+          <line>139</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/model/BlogPost.kt</url>
+          <line>137</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

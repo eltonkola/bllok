@@ -184,7 +184,7 @@ class BllokGenerator(
             pageFiles = emptyList(),
             recentsFiles = recents,
             templatePage = "post.html",
-            fileName =  post.link,
+            fileName = post.link,
             post = post,
             navs = post.link.toBreadcrumbNavs()
         )

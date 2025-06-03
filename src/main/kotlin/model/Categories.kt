@@ -54,5 +54,11 @@ fun buildCategoryTree(
         subcategories = emptyList()
     )
 
-    return category.copy(subcategories = subdirs.map { buildCategoryTree(it, root = root , parent = category)})
+
+    return category.copy(
+        subcategories = subdirs.map { buildCategoryTree(it, root = root , parent = category)},
+        files = files.map {
+            it.copy(parent = category)
+        }
+        )
 }

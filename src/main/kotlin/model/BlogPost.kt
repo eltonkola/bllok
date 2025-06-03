@@ -46,6 +46,8 @@ fun String.toBreadcrumbNavs(): List<Nav> {
         navs.add(Nav(name = name, link = currentPath))
     }
 
+    if(navs.isNotEmpty()) navs.removeLast()
+
     return navs
 }
 
@@ -127,8 +129,16 @@ fun BlogFile.parseBlogPost(): BlogPost {
         metadata = metadata,
         content = updatedHtml,
         fileName = thisFile.nameWithoutExtension,
-        link = "${this.parent?.path + "/" ?: ""}${thisFile.nameWithoutExtension}.html"
+        link = createPostLink(thisFile)
     )
+}
+
+fun BlogFile.createPostLink(thisFile: File) : String {
+    return if(this.parent != null){
+        "${this.parent.path + "/"}${thisFile.nameWithoutExtension}.html"
+    }else{
+        "${thisFile.nameWithoutExtension}.html"
+    }
 }
 
 
