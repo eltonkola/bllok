@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10316bd1-959f-4af0-bb94-797a5920e597" name="Changes" comment="update sort">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/engine/Utils.kt" afterDir="false" />
+    <list default="true" id="10316bd1-959f-4af0-bb94-797a5920e597" name="Changes" comment="update sorting with git history">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/engine/Log.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/themes/simple_template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/simple_template/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/themes/simple_template/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/simple_template/post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Bllok.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Bllok.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/BllokGenerator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/BllokGenerator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/engine/IfCondition.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/engine/IfCondition.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/engine/TemplateEngine.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/engine/TemplateEngine.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/engine/rss/RssRenderer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/engine/rss/RssRenderer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/model/Categories.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/Categories.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,27 +95,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Build bllok.executor": "Run",
-    "Gradle.bllok [assemble].executor": "Run",
-    "Gradle.bllok [build].executor": "Run",
-    "Kotlin.BllokKt.executor": "Run",
-    "Kotlin.BlogParserKt.executor": "Run",
-    "Kotlin.MainKt.executor": "Run",
-    "Kotlin.RenderEltonKt.executor": "Run",
-    "Kotlin.RenderLetersiaKt.executor": "Run",
-    "Kotlin.RenderSkenderbeuKt.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/test/Documents/GitHub/bllok/demo_content/skenderbeu_blog/skenderbeu_blog/Pages",
-    "onboarding.tips.debug.path": "C:/Users/test/Documents/GitHub/bllok/src/main/kotlin/Main.kt",
-    "settings.editor.selected.configurable": "advanced.settings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build bllok.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.bllok [assemble].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.bllok [build].executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.BllokKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.BlogParserKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.RenderEltonKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.RenderLetersiaKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.RenderSkenderbeuKt.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/test/Documents/GitHub/bllok/demo_content/skenderbeu_blog/skenderbeu_blog/Pages&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/test/Documents/GitHub/bllok/src/main/kotlin/Main.kt&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\test\Documents\GitHub\bllok\demo_content\skenderbeu_blog\skenderbeu_blog\Pages" />
@@ -127,7 +130,7 @@
       <recent name="com.eltonkola.model" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.RenderSkenderbeuKt">
+  <component name="RunManager" selected="Gradle.bllok [assemble]">
     <configuration name="bllok [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -212,8 +215,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.RenderSkenderbeuKt" />
         <item itemvalue="Gradle.bllok [assemble]" />
+        <item itemvalue="Kotlin.RenderSkenderbeuKt" />
         <item itemvalue="Gradle.bllok [build]" />
         <item itemvalue="Kotlin.RenderEltonKt" />
         <item itemvalue="Kotlin.RenderLetersiaKt" />
@@ -252,14 +255,23 @@
       <option name="project" value="LOCAL" />
       <updated>1749006705290</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update sorting with git history">
+      <option name="closed" value="true" />
+      <created>1749042538571</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1749042538571</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="root path param, for github pages" />
     <MESSAGE value="fix variable nr" />
     <MESSAGE value="update sort" />
-    <option name="LAST_COMMIT_MESSAGE" value="update sort" />
+    <MESSAGE value="update sorting with git history" />
+    <option name="LAST_COMMIT_MESSAGE" value="update sorting with git history" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

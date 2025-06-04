@@ -9,13 +9,13 @@ internal fun parseIfCondition(template: String,
                               parse:(String) -> List<Token>
                               ): Pair<Token.IfCondition, Int> {
     val originalIfTag = template.substring(startPos, template.indexOf("}}", startPos) + 2)
-    println("--- Parsing IF: $originalIfTag ---") // Debug
+    Log.println("--- Parsing IF: $originalIfTag ---") // Debug
 
     val condition = expression.substringAfter("if ").trim()
     if (condition.isEmpty()) {
         throw IllegalArgumentException("If condition cannot be empty: {{ if }} at position $startPos")
     }
-    println("Condition: '$condition'") // Debug
+    Log.println("Condition: '$condition'") // Debug
 
     var depth = 1
     // Start searching for body content AFTER the initial {{ if ... }} tag
@@ -32,7 +32,7 @@ internal fun parseIfCondition(template: String,
         val nextElseTagPos = template.indexOf("{{ else", searchStartCursor)
         val nextEndTagPos = template.indexOf("{{ endif", searchStartCursor)
 
-        println("Search Cursor: $searchStartCursor, Depth: $depth, nextIf: $nextIfTagPos, nextElse: $nextElseTagPos, nextEnd: $nextEndTagPos") // Debug
+        Log.println("Search Cursor: $searchStartCursor, Depth: $depth, nextIf: $nextIfTagPos, nextElse: $nextElseTagPos, nextEnd: $nextEndTagPos") // Debug
 
         // Determine the earliest relevant tag that is actually found (not -1)
         var earliestTagPos = Int.MAX_VALUE
@@ -81,7 +81,7 @@ internal fun parseIfCondition(template: String,
         else B_earliestTagType = "endif"
 
 
-        println("Earliest Tag: '$B_earliestTagType' at $B_earliestTagPos") // Debug
+        Log.println("Earliest Tag: '$B_earliestTagType' at $B_earliestTagPos") // Debug
 
         when (B_earliestTagType) {
             "if" -> { // Found a nested "{{ if"
@@ -119,7 +119,7 @@ internal fun parseIfCondition(template: String,
         }
     } // End of while loop
 
-    println("Loop finished. Depth: $depth, ifBodyContentEnd: $ifBodyContentEnd, elseBodyContentStart: $elseBodyContentStart, finalEndTagStart: $finalEndTagStart") // Debug
+    Log.println("Loop finished. Depth: $depth, ifBodyContentEnd: $ifBodyContentEnd, elseBodyContentStart: $elseBodyContentStart, finalEndTagStart: $finalEndTagStart") // Debug
 
     if (depth != 0 || finalEndTagStart == -1) {
         throw IllegalArgumentException("Unclosed if statement or malformed structure for condition '$condition' (depth $depth, finalEndTag $finalEndTagStart) starting with $originalIfTag")
@@ -129,24 +129,24 @@ internal fun parseIfCondition(template: String,
     }
 
     val ifBodyStr = template.substring(ifBodyContentStart, ifBodyContentEnd)
-    println("IF BODY CONTENT ('$condition'):\n>>>\n$ifBodyStr\n<<<") // Debug
+    Log.println("IF BODY CONTENT ('$condition'):\n>>>\n$ifBodyStr\n<<<") // Debug
     val ifBodyTokens = parse(ifBodyStr)
 
     var elseBodyTokens: List<Token>? = null
     if (elseBodyContentStart != -1) { // An {{ else }} was found
         // The else body is from elseBodyContentStart up to finalEndTagStart
         if (elseBodyContentStart >= finalEndTagStart) {
-            println("Warning: Else body content has zero or negative length. elseBodyContentStart=$elseBodyContentStart, finalEndTagStart=$finalEndTagStart for $originalIfTag") // Debug
+            Log.println("Warning: Else body content has zero or negative length. elseBodyContentStart=$elseBodyContentStart, finalEndTagStart=$finalEndTagStart for $originalIfTag") // Debug
             elseBodyTokens = emptyList()
         } else {
             val elseBodyStr = template.substring(elseBodyContentStart, finalEndTagStart)
-            println("ELSE BODY CONTENT ('$condition'):\n>>>\n$elseBodyStr\n<<<") // Debug
+            Log.println("ELSE BODY CONTENT ('$condition'):\n>>>\n$elseBodyStr\n<<<") // Debug
             elseBodyTokens = parse(elseBodyStr)
         }
     }
 
     val endTagFullEndPos = template.indexOf("}}", finalEndTagStart) + 2
-    println("--- Finished parsing IF: $originalIfTag. Next parse index: $endTagFullEndPos ---") // Debug
+    Log.println("--- Finished parsing IF: $originalIfTag. Next parse index: $endTagFullEndPos ---") // Debug
 
     return Pair(Token.IfCondition(condition, ifBodyTokens, elseBodyTokens), endTagFullEndPos)
 }

@@ -1,3 +1,4 @@
+import com.eltonkola.engine.Log
 import com.eltonkola.engine.parseForLoop
 import com.eltonkola.engine.parseIfCondition
 import com.eltonkola.model.BllokConfig
@@ -76,7 +77,7 @@ class TemplateEngine(
             partials[name] = template // Cache it
             template
         } catch (e: Exception) {
-            println("Warning: Could not load partial '$name' from '$filePath': ${e.message}")
+            Log.println("Warning: Could not load partial '$name' from '$filePath': ${e.message}")
             null
         }
     }
@@ -156,7 +157,7 @@ class TemplateEngine(
 
         if (actualConditionStr.isEmpty()) {
             // e.g., {{ if not }} - this is likely an error or an attempt to negate nothing
-            println("Warning: Empty condition after 'not': '$conditionStr'")
+            Log.println("Warning: Empty condition after 'not': '$conditionStr'")
             return if (isNegated) true else false // "not <empty>" could be true, "<empty>" is false
         }
 
@@ -217,9 +218,9 @@ class TemplateEngine(
                         val partialContext = if (token.context != null) {
                             val contextData = context.get(token.context)
                             if (contextData != null) {
-                                println("Debug: Passing to partial '${token.name}': ${contextData}")
+                                Log.println("Debug: Passing to partial '${token.name}': ${contextData}")
                                 if (contextData is Category) {
-                                    println("Debug: Category has ${contextData.subcategories.size} subcategories")
+                                    Log.println("Debug: Category has ${contextData.subcategories.size} subcategories")
                                 }
                                 // Corrected map merging order:
                                 // The new "this" (from mapOf("this" to contextData)) should take precedence.
@@ -232,7 +233,7 @@ class TemplateEngine(
                         }
                         result.append(render(partialTemplate, partialContext))
                     } else {
-                        println("Warning: Partial '${token.name}' not found")
+                        Log.println("Warning: Partial '${token.name}' not found")
                     }
                 }
             }
@@ -246,7 +247,7 @@ class TemplateEngine(
         return when (value) {
             is List<*> -> value.filterNotNull()
             else -> {
-                println("Debug: Collection '$name' resolved to: $value (${value?.javaClass?.simpleName})")
+                Log.println("Debug: Collection '$name' resolved to: $value (${value?.javaClass?.simpleName})")
                 emptyList()
             }
         }
@@ -307,7 +308,7 @@ class TemplateEngine(
 
         // Debug output
         if (obj is Category && property == "subCategories") {
-            println("Debug: Getting subCategories from ${obj.name}: ${obj.subcategories.map { it.name }}")
+            Log.println("Debug: Getting subCategories from ${obj.name}: ${obj.subcategories.map { it.name }}")
         }
 
         return result

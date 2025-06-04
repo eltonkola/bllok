@@ -1,5 +1,6 @@
 package com.eltonkola.model
 
+import com.eltonkola.engine.Log
 import java.io.File
 
 
@@ -20,11 +21,11 @@ data class Category(
     }
 
     fun printTree(parent: String = "") {
-        println("$parent-----")
-        println("$parent name: $name")
-        println("$parent directory : $directory")
-        println("$parent path : $path")
-        println("$parent subcategories : ${subcategories.size}")
+        Log.println("$parent-----")
+        Log.println("$parent name: $name")
+        Log.println("$parent directory : $directory")
+        Log.println("$parent path : $path")
+        Log.println("$parent subcategories : ${subcategories.size}")
         subcategories.forEach { it.printTree("$parent>>") }
     }
 

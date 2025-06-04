@@ -1,5 +1,6 @@
 package com.eltonkola.engine.rss
 
+import com.eltonkola.engine.Log
 import com.eltonkola.model.BllokConfig
 import com.eltonkola.model.BlogConfig
 import com.eltonkola.model.BlogPost
@@ -25,7 +26,7 @@ fun renderRssFeed(
     }
 
     val rssXml = generator.generate(items)
-    //println(rssXml)
+    Log.println(rssXml)
 
     File(options.outputPath,"rss.xml").writeText(rssXml)
 }

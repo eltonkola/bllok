@@ -1,5 +1,6 @@
 package com.eltonkola
 
+import com.eltonkola.engine.Log
 import com.eltonkola.model.BllokConfig
 import com.eltonkola.model.buildCategoryTree
 import com.eltonkola.model.parseYamlConfig
@@ -11,7 +12,7 @@ import kotlin.system.exitProcess
 fun main(args: Array<String>) {
 
     val startedAt = Instant.now()
-    println("Bllok start!")
+    Log.println("Bllok start!")
     if(args.size >= 3) {
         val templatePath = args[0]
         val inputPath = args[1]
@@ -19,14 +20,14 @@ fun main(args: Array<String>) {
 
         val rootPath = if(args.size > 3) args[3] else null
 
-        println("templatePath: $templatePath")
-        println("inputPath: $inputPath")
-        println("outputPath: $outputPath")
-        println("rootPath: $rootPath")
+        Log.println("templatePath: $templatePath", true)
+        Log.println("inputPath: $inputPath", true)
+        Log.println("outputPath: $outputPath", true)
+        Log.println("rootPath: $rootPath", true)
 
 
         if(templatePath.isEmpty() || inputPath.isEmpty() || outputPath.isEmpty()) {
-            println("!!! please pass the template and output path sa parameters !!!")
+            Log.println("!!! please pass the template and output path sa parameters !!!", true)
             exitProcess(1)
         }
         Bllok(BllokConfig(
@@ -37,20 +38,22 @@ fun main(args: Array<String>) {
             debug = false
         )).execute()
     }else{
-        println("!!! please pass the template and output path sa parameters !!!")
+        Log.println("!!! please pass the template and output path sa parameters !!!", true)
         exitProcess(1)
     }
-    println("Bllok end!")
-    println("Executed in: ${Instant.now().toEpochMilli() - startedAt.toEpochMilli() } millisec!")
+    Log.println("Bllok end!", true)
+    Log.println("Executed in: ${Instant.now().toEpochMilli() - startedAt.toEpochMilli() } millisec!", true)
     exitProcess(0)
 }
 class Bllok(
     private val options: BllokConfig
 ){
     fun execute() {
-        println("templatePath: ${options.templatePath}")
-        println("inputPath: ${options.inputPath}")
-        println("outputPath: ${options.outputPath}")
+        Log.showLogs = options.debug
+
+        Log.println("templatePath: ${options.templatePath}", true)
+        Log.println("inputPath: ${options.inputPath}", true)
+        Log.println("outputPath: ${options.outputPath}", true)
 
         //blog settings
         val config = parseYamlConfig("${options.inputPath}/bllok.yaml")
@@ -58,7 +61,7 @@ class Bllok(
         val contentTree = buildCategoryTree(directory = File(options.inputPath))
 
         if (options.debug) {
-            println("Blog title: ${config.websiteName}")
+            Log.println("Blog title: ${config.websiteName}")
             contentTree.printTree()
         }
 

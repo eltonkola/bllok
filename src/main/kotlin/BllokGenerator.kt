@@ -3,6 +3,7 @@ package com.eltonkola
 import Nav
 import Page
 import PagingItem
+import com.eltonkola.engine.Log
 import com.eltonkola.engine.pageRenderer
 import com.eltonkola.engine.recents
 import com.eltonkola.engine.rss.renderRssFeed
@@ -47,8 +48,8 @@ class BllokGenerator(
 
     fun generate(){
         //we will generate a category, this may be the root folder, or a subfolder on a tree of content
-        println("config: $config")
-        println("inputPath: $root")
+        Log.println("config: $config")
+        Log.println("inputPath: $root")
 
         val allFiles = root.getAllFiles().sort()
         val recents = allFiles.recents(5)
