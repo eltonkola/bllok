@@ -88,6 +88,8 @@ categoryItem partial:
 
 ## post metadata
 
+for now only date is used, one day will use them all
+
 ---
 title: "My Blog Post Title"
 date: "2025-06-04T14:30:00Z"    # ISO 8601 format date/time string
