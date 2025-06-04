@@ -20,7 +20,7 @@ yhe theme you want to use
 the content folder
 ### 3 rootPath
 the output folder
-### 4 rootPath
+### 4 rootpath
 dont pass this param if the page will be published on the root folder of your domain/subdomain
 for this github page: https://eltonkola.github.io/bllok_skenderbeu/ it would be:
 

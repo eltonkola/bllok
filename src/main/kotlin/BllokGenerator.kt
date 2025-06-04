@@ -49,7 +49,7 @@ class BllokGenerator(
         println("config: $config")
         println("inputPath: $root")
 
-        val allFiles = root.getAllFiles().sortedBy { it.file.lastModified() }
+        val allFiles = root.getAllFiles().sortedByDescending { it.file.lastModified() }
         val recents = allFiles.recents(5)
         //1. generate index page
         renderIndex(
