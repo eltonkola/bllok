@@ -6,6 +6,7 @@ import PagingItem
 import com.eltonkola.engine.pageRenderer
 import com.eltonkola.engine.recents
 import com.eltonkola.engine.rss.renderRssFeed
+import com.eltonkola.engine.sort
 import com.eltonkola.model.BllokConfig
 import com.eltonkola.model.BlogConfig
 import com.eltonkola.model.BlogFile
@@ -49,7 +50,7 @@ class BllokGenerator(
         println("config: $config")
         println("inputPath: $root")
 
-        val allFiles = root.getAllFiles().sortedByDescending { it.file.lastModified() }
+        val allFiles = root.getAllFiles().sort()
         val recents = allFiles.recents(5)
         //1. generate index page
         renderIndex(
@@ -216,3 +217,5 @@ class BllokGenerator(
     }
 
 }
+
+

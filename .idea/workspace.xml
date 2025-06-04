@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10316bd1-959f-4af0-bb94-797a5920e597" name="Changes" comment="fix variable nr">
+    <list default="true" id="10316bd1-959f-4af0-bb94-797a5920e597" name="Changes" comment="update sort">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/engine/Utils.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/themes/simple_template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/simple_template/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/themes/simple_template/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/simple_template/post.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/BllokGenerator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/BllokGenerator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/RenderSkenderbeu.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/RenderSkenderbeu.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,13 +244,22 @@
       <option name="project" value="LOCAL" />
       <updated>1749002364650</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update sort">
+      <option name="closed" value="true" />
+      <created>1749006705290</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1749006705290</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="root path param, for github pages" />
     <MESSAGE value="fix variable nr" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix variable nr" />
+    <MESSAGE value="update sort" />
+    <option name="LAST_COMMIT_MESSAGE" value="update sort" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
