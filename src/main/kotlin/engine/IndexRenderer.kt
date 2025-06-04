@@ -49,7 +49,8 @@ fun pageRenderer(
             "posts" to posts,
             "recentposts" to recents,
             "post" to post,
-            "paging" to paging
+            "paging" to paging,
+            "rootPath" to if(options.rootPath == null) "" else "/${options.rootPath}"
         )
     )
 

@@ -4,5 +4,6 @@ data class BllokConfig(
     val templatePath: String,
     val inputPath: String,
     val outputPath: String,
-    val debug: Boolean = false
+    val debug: Boolean = false,
+    val rootPath: String? = null
 )

@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10316bd1-959f-4af0-bb94-797a5920e597" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/demo_content/themes/hacker_template/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo_content/themes/hacker_template/post.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/themes/modern_template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/modern_template/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/themes/modern_template/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/modern_template/post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/themes/simple_template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/simple_template/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_content/themes/simple_template/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/simple_template/post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Bllok.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Bllok.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/engine/IndexRenderer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/engine/IndexRenderer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/engine/TemplateEngine.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/engine/TemplateEngine.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/model/BllokConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/BllokConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/RenderSkenderbeu.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/RenderSkenderbeu.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +133,7 @@
       <recent name="com.eltonkola.model" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.bllok [assemble]">
+  <component name="RunManager" selected="Kotlin.RenderSkenderbeuKt">
     <configuration name="bllok [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -211,9 +218,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.RenderSkenderbeuKt" />
         <item itemvalue="Gradle.bllok [assemble]" />
         <item itemvalue="Gradle.bllok [build]" />
-        <item itemvalue="Kotlin.RenderSkenderbeuKt" />
         <item itemvalue="Kotlin.RenderEltonKt" />
         <item itemvalue="Kotlin.RenderLetersiaKt" />
       </list>
@@ -232,11 +239,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/BllokGenerator.kt</url>
-          <line>186</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/model/BlogPost.kt</url>
           <line>139</line>

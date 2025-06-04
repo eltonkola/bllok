@@ -271,18 +271,18 @@ class TemplateEngine(
         val result = when (obj) {
             is Page -> when (property) {
                 "name" -> obj.name
-                "link" -> obj.link.asLink()
+                "link" -> obj.link.asLink(options.rootPath)
                 else -> null
             }
             is Nav -> when (property) {
                 "name" -> obj.name
-                "link" -> obj.link.asLink()
+                "link" -> obj.link.asLink(options.rootPath)
                 else -> null
             }
             is Category -> when (property) {
                 "name" -> obj.name
                 "subCategories" -> obj.subcategories
-                "link" -> obj.path.asLink()
+                "link" -> obj.path.asLink(options.rootPath)
                 "count" -> obj.getAllFiles().size
                 "hasKids" -> obj.subcategories.isNotEmpty()
                 else -> null
@@ -292,12 +292,12 @@ class TemplateEngine(
                 "date" -> obj.metadata.date
                 "snippet" -> obj.snippet
                 "content" -> obj.content
-                "link" -> obj.link.asLink()
+                "link" -> obj.link.asLink(options.rootPath)
                 else -> null
             }
             is PagingItem -> when (property) {
                 "label" -> obj.label
-                "link" -> obj.link.asLink()
+                "link" -> obj.link.asLink(options.rootPath)
                 "selected" -> obj.selected
                 else -> null
             }
@@ -314,7 +314,7 @@ class TemplateEngine(
     }
 }
 
-fun String.asLink() : String {
-    return if (this.startsWith("/")) this else "/$this"
-
+fun String.asLink(rootPath: String?) : String {
+    val url = if (this.startsWith("/")) this else "/$this"
+    return if(rootPath == null) url else "/$rootPath$url"
 }

@@ -13,7 +13,7 @@
     <meta property="og:site_name" content="My Awesome Blog" />
     <meta property="article:published_time" content="2024-01-01T12:00:00Z" />
     <meta property="article:author" content="https://example.com/authors/placeholder-author" />
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="{{ rootPath }}/style.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -52,7 +52,7 @@
 </head>
 <body class="blog-article">
     <header>
-        <h1><a href="/index.html">{{ websiteName }}</a></h1>
+        <h1><a href="{{ rootPath }}/index.html">{{ websiteName }}</a></h1>
 
         <nav class="primary-navigation">
             <ul>
@@ -89,7 +89,7 @@
         <aside class="sidebar">
             <div class="widget connect-widget">
                 <h4>Connect</h4>
-                <p><a href="/rss.xml" class="rss-sidebar-link">Subscribe via RSS</a></p>
+                <p><a href="{{ rootPath }}/rss.xml" class="rss-sidebar-link">Subscribe via RSS</a></p>
             </div>
             <div class="widget categories-widget">
                 <h4>Categories</h4>
@@ -121,6 +121,6 @@
     <footer>
         <p>{{ websiteCopyright }}</p>
     </footer>
-    <script src="/script.js"></script>
+    <script src="{{ rootPath }}/script.js"></script>
 </body>
 </html>

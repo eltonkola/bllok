@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>{{ websiteName }}</title>
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ rootPath }}/rss.xml" />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
@@ -67,7 +67,7 @@
     <!-- RSS -->
     <div>
       <h3 class="text-lg font-semibold mb-2 border-b pb-1">📡 Subscribe</h3>
-      <a href="/rss.xml" class="text-indigo-600 hover:underline text-sm">RSS Feed</a>
+      <a href="{{ rootPath }}/rss.xml" class="text-indigo-600 hover:underline text-sm">RSS Feed</a>
     </div>
 
     <!-- Categories -->

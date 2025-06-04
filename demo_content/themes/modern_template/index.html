@@ -11,11 +11,11 @@
     <meta property="og:url" content="https://example.com/blog_index.html" />
     <meta property="og:image" content="https://example.com/images/blog_logo_og.png" />
     <meta property="og:site_name" content="My Awesome Blog" />
-   <link rel="stylesheet" href="/style.css">
+   <link rel="stylesheet" href="{{ rootPath }}/style.css">
 </head>
 <body class="blog-index">
     <header>
-        <h1><a href="/index.html">{{ websiteName }}</a></h1>
+        <h1><a href="{{ rootPath }}/index.html">{{ websiteName }}</a></h1>
         <nav class="primary-navigation">
             <ul>
                 {{ for page in pages }}
@@ -58,7 +58,7 @@
         <aside class="sidebar">
             <div class="widget connect-widget">
                 <h4>Connect</h4>
-                <p><a href="/rss.xml" class="rss-sidebar-link">Subscribe via RSS</a></p>
+                <p><a href="{{ rootPath }}/rss.xml" class="rss-sidebar-link">Subscribe via RSS</a></p>
             </div>
             <div class="widget categories-widget">
                 <h4>Categories</h4>
@@ -90,6 +90,6 @@
     <footer>
         <p>{{ websiteCopyright }}</p>
     </footer>
-    <script src="/script.js"></script>
+    <script src="{{ rootPath }}/script.js"></script>
 </body>
 </html>

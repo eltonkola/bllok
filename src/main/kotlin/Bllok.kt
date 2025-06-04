@@ -12,13 +12,18 @@ fun main(args: Array<String>) {
 
     val startedAt = Instant.now()
     println("Bllok start!")
-    if(args.size == 3) {
+    if(args.size >= 3) {
         val templatePath = args[0]
         val inputPath = args[1]
         val outputPath = args[2]
+
+        val rootPath = if(args.size > 3) args[2] else null
+
         println("templatePath: $templatePath")
         println("inputPath: $inputPath")
         println("outputPath: $outputPath")
+        println("rootPath: $rootPath")
+
 
         if(templatePath.isEmpty() || inputPath.isEmpty() || outputPath.isEmpty()) {
             println("!!! please pass the template and output path sa parameters !!!")
@@ -28,7 +33,8 @@ fun main(args: Array<String>) {
             templatePath = templatePath,
             inputPath = inputPath,
             outputPath = outputPath,
-            debug = true //TODO - remove
+            rootPath = rootPath,
+            debug = false
         )).execute()
     }else{
         println("!!! please pass the template and output path sa parameters !!!")
