@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10316bd1-959f-4af0-bb94-797a5920e597" name="Changes" comment="">
+    <list default="true" id="10316bd1-959f-4af0-bb94-797a5920e597" name="Changes" comment="root path param, for github pages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/themes/modern_template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/modern_template/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/themes/modern_template/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/modern_template/post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/themes/simple_template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/simple_template/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/themes/simple_template/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/themes/simple_template/post.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Bllok.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Bllok.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/engine/IndexRenderer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/engine/IndexRenderer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/engine/TemplateEngine.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/engine/TemplateEngine.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/model/BllokConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/BllokConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/RenderSkenderbeu.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/RenderSkenderbeu.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +124,7 @@
       <recent name="com.eltonkola.model" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.RenderSkenderbeuKt">
+  <component name="RunManager" selected="Gradle.bllok [assemble]">
     <configuration name="bllok [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -218,8 +209,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.RenderSkenderbeuKt" />
         <item itemvalue="Gradle.bllok [assemble]" />
+        <item itemvalue="Kotlin.RenderSkenderbeuKt" />
         <item itemvalue="Gradle.bllok [build]" />
         <item itemvalue="Kotlin.RenderEltonKt" />
         <item itemvalue="Kotlin.RenderLetersiaKt" />
@@ -234,7 +225,20 @@
       <option name="presentableId" value="Default" />
       <updated>1748694274612</updated>
     </task>
+    <task id="LOCAL-00001" summary="root path param, for github pages">
+      <option name="closed" value="true" />
+      <created>1749000356184</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1749000356186</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="root path param, for github pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="root path param, for github pages" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

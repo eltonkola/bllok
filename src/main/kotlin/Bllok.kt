@@ -17,7 +17,7 @@ fun main(args: Array<String>) {
         val inputPath = args[1]
         val outputPath = args[2]
 
-        val rootPath = if(args.size > 3) args[2] else null
+        val rootPath = if(args.size > 3) args[3] else null
 
         println("templatePath: $templatePath")
         println("inputPath: $inputPath")
