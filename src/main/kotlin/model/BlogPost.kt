@@ -1,7 +1,6 @@
 package com.eltonkola.model
 
 import Nav
-import jdk.internal.vm.ThreadContainers.root
 import org.intellij.markdown.flavours.commonmark.CommonMarkFlavourDescriptor
 import org.intellij.markdown.html.HtmlGenerator
 import org.intellij.markdown.parser.MarkdownParser
@@ -9,7 +8,6 @@ import java.io.File
 import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
-import java.time.format.DateTimeParseException
 
 data class PostMetadata(
     val title: String = "Untitled",

@@ -86,3 +86,18 @@ categoryItem partial:
 {{ language }}
 {{ websiteCopyright }}
 
+## post metadata
+
+---
+title: "My Blog Post Title"
+date: "2025-06-04T14:30:00Z"    # ISO 8601 format date/time string
+slug: "my-blog-post-title"
+summary: "A brief preview or summary of the blog post content."
+tags:
+- tag1
+- tag2
+- tag3
+draft: false
+language: "en"
+---
+
