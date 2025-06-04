@@ -28,6 +28,7 @@ suspend fun getGitCreationDatesParallel(files: List<File>): Map<File, Instant> =
             val date = try {
                 dateStr?.let { Instant.from(isoFormatter.parse(it)) }
             } catch (e: Exception) {
+                e.printStackTrace()
                 null
             }
             file to (date ?: Instant.EPOCH)

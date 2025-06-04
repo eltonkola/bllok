@@ -53,6 +53,11 @@ class BllokGenerator(
 
         val allFiles = root.getAllFiles().sort()
         val recents = allFiles.recents(5)
+
+        if(isRoot){
+            Log.println("files to generate: ${allFiles.size}", true)
+        }
+
         //1. generate index page
         renderIndex(
             allFiles = allFiles,
@@ -83,6 +88,7 @@ class BllokGenerator(
 
         val pages = allFiles.chunked(config.postsPerPage)
         Log.println("pages: $pages")
+
 
         pages.forEachIndexed { index, page ->
 
