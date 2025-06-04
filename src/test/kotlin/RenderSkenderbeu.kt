@@ -13,7 +13,7 @@ fun main() {
             inputPath = "C:\\Users\\test\\Documents\\GitHub\\bllok\\demo_content\\skenderbeu_blog\\skenderbeu_blog",
             outputPath = "C:\\Users\\test\\Documents\\GitHub\\bllok\\demo_content\\skenderbeu_blog\\publish_skenderbeu_blog\\bllok_skenderbeu",
             rootPath = "bllok_skenderbeu",
-            debug = true //TODO - remove
+            debug = false //TODO - remove
         )).execute()
     println("Bllok end!")
     println("Executed in: ${Instant.now().toEpochMilli() - startedAt.toEpochMilli() } millisec!")

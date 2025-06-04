@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="10316bd1-959f-4af0-bb94-797a5920e597" name="Changes" comment="logs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/engine/Log.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/engine/Log.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/BllokGenerator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/BllokGenerator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/RenderSkenderbeu.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/RenderSkenderbeu.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +125,7 @@
       <recent name="com.eltonkola.model" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.bllok [assemble]">
+  <component name="RunManager" selected="Kotlin.RenderSkenderbeuKt">
     <configuration name="bllok [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -209,8 +210,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.bllok [assemble]" />
         <item itemvalue="Kotlin.RenderSkenderbeuKt" />
+        <item itemvalue="Gradle.bllok [assemble]" />
         <item itemvalue="Gradle.bllok [build]" />
         <item itemvalue="Kotlin.RenderEltonKt" />
         <item itemvalue="Kotlin.RenderLetersiaKt" />
@@ -265,7 +266,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749044995013</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="logs">
+      <option name="closed" value="true" />
+      <created>1749045526922</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1749045526922</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -280,14 +289,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/model/BlogPost.kt</url>
-          <line>139</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/model/BlogPost.kt</url>
-          <line>137</line>
-          <option name="timeStamp" value="22" />
+          <url>file://$PROJECT_DIR$/src/main/kotlin/engine/Log.kt</url>
+          <line>8</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

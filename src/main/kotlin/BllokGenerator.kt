@@ -82,10 +82,12 @@ class BllokGenerator(
         //scan all docs in the tree, and generate a list of X last posts
 
         val pages = allFiles.chunked(config.postsPerPage)
-        print("pages: $pages")
+        Log.println("pages: $pages")
 
         pages.forEachIndexed { index, page ->
-            print("index: $index - page: $page")
+
+            Log.println("index: $index - page: $page")
+
             val fileName = if(index == 0) "index.html" else "index_${index}.html"
 
 
