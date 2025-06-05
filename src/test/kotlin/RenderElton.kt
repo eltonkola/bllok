@@ -11,8 +11,9 @@ fun main() {
     val startedAt = Instant.now()
     println("Bllok start!")
         Bllok(BllokConfig(
-            templatePath = SIMPLE_THEME,
+//            templatePath = SIMPLE_THEME,
 //            templatePath = MODERN_THEME,
+            templatePath = "C:\\Users\\test\\Documents\\GitHub\\blog\\tema",
             inputPath = "C:\\Users\\test\\Documents\\GitHub\\bllok\\demo_content\\eltonkola_blog\\blog",
             outputPath = "C:\\Users\\test\\Documents\\GitHub\\bllok\\demo_content\\eltonkola_blog\\publish",
             debug = true //TODO - remove

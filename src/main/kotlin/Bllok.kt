@@ -34,7 +34,7 @@ fun main(args: Array<String>) {
             templatePath = templatePath,
             inputPath = inputPath,
             outputPath = outputPath,
-            rootPath = rootPath,
+            rootPath = if(rootPath.isNullOrEmpty()) null else rootPath,
             debug = false
         )).execute()
     }else{

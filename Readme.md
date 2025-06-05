@@ -92,7 +92,7 @@ for now only date is used, one day will use them all
 
 ---
 title: "My Blog Post Title"
-date: "2025-06-04T14:30:00Z"    # ISO 8601 format date/time string
+date: "2025-06-04"
 slug: "my-blog-post-title"
 summary: "A brief preview or summary of the blog post content."
 tags:
