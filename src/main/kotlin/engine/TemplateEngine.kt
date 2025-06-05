@@ -10,6 +10,11 @@ data class Page(
     val link: String
 )
 
+data class SocialLink(
+    val name: String,
+    val link: String
+)
+
 data class PagingItem(
     val label: String,
     val link: String,
@@ -275,6 +280,11 @@ class TemplateEngine(
                 "link" -> obj.link.asLink(options.rootPath)
                 else -> null
             }
+            is SocialLink -> when (property) {
+                "name" -> obj.name
+                "link" -> obj.link
+                else -> null
+            }
             is Nav -> when (property) {
                 "name" -> obj.name
                 "link" -> obj.link.asLink(options.rootPath)
@@ -293,6 +303,7 @@ class TemplateEngine(
                 "date" -> obj.metadata.date
                 "snippet" -> obj.snippet
                 "content" -> obj.content
+                "category" -> obj.parent?.name ?: ""
                 "link" -> obj.link.asLink(options.rootPath)
                 else -> null
             }

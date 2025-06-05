@@ -13,41 +13,60 @@ data class BlogConfig(
     val websiteCopyright: String,
     val language: String
 )
-
 fun parseYamlConfig(filePath: String): BlogConfig {
     val map = mutableMapOf<String, Any>()
     val lines = File(filePath).readLines()
 
     var currentKey: String? = null
-    val currentList = mutableListOf<String>()
+    var currentList: MutableList<String>? = null
 
-    for (line in lines.map { it.trimEnd() }) {
-        if (line.isBlank() || line.startsWith("#")) continue
+    for ((index, lineRaw) in lines.withIndex()) {
+        val line = lineRaw.trimEnd()
+        if (line.isBlank() || line.trimStart().startsWith("#")) continue
 
-        // List continuation
-        if (line.startsWith("- ") && currentKey != null) {
-            val value = line.removePrefix("- ").trim().removeSurrounding("\"")
-            currentList.add(value)
-            map[currentKey] = currentList.toList()
+        val isLastLine = index == lines.lastIndex
+
+        if (line.trimStart().startsWith("- ") && currentKey != null) {
+            // Continue a list
+            val value = line.trimStart().removePrefix("- ").trim().removeSurrounding("\"")
+            currentList?.add(value)
+
+            // If it's the last line, we need to finalize the list
+            if (isLastLine && currentList != null) {
+                map[currentKey] = currentList.toList()
+                currentKey = null
+                currentList = null
+            }
+
+            continue
         }
-        // New key-value or new list start
-        else {
-            val parts = line.split(":", limit = 2)
-            if (parts.size == 2) {
-                val key = parts[0].trim()
-                val rawValue = parts[1].trim()
 
-                if (rawValue.isEmpty()) {
-                    // Assume it's a list starting from next lines
-                    currentKey = key
-                    currentList.clear()
-                } else {
-                    val value = rawValue.removeSurrounding("\"")
-                    map[key] = value
-                    currentKey = null
-                }
+        // New key detected: finalize any previous list
+        if (currentKey != null && currentList != null) {
+            map[currentKey] = currentList.toList()
+            currentKey = null
+            currentList = null
+        }
+
+        val parts = line.split(":", limit = 2)
+        if (parts.size == 2) {
+            val key = parts[0].trim()
+            val rawValue = parts[1].trim()
+
+            if (rawValue.isEmpty()) {
+                // Start a new list
+                currentKey = key
+                currentList = mutableListOf()
+            } else {
+                val value = rawValue.removeSurrounding("\"")
+                map[key] = value
             }
         }
+    }
+
+    // Final catch for dangling list at EOF
+    if (currentKey != null && currentList != null) {
+        map[currentKey] = currentList.toList()
     }
 
     return BlogConfig(
@@ -62,4 +81,3 @@ fun parseYamlConfig(filePath: String): BlogConfig {
         language = map["language"] as? String ?: "en"
     )
 }
-

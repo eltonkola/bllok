@@ -25,7 +25,8 @@ data class BlogPost(
     val metadata: PostMetadata,
     val content: String,
     val fileName: String,
-    val link: String
+    val link: String,
+    val parent: Category?
 ){
 
     val snippet get() = extractPreview(content)
@@ -133,6 +134,7 @@ fun BlogFile.parseBlogPost(): BlogPost {
         metadata = metadata,
         content = updatedHtml,
         fileName = thisFile.nameWithoutExtension,
+        parent = this.parent,
         link = createPostLink(thisFile)
     )
 }

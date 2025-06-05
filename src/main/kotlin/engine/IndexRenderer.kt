@@ -3,6 +3,7 @@ package com.eltonkola.engine
 import Nav
 import Page
 import PagingItem
+import SocialLink
 import TemplateContext
 import TemplateEngine
 import com.eltonkola.model.BllokConfig
@@ -40,7 +41,12 @@ fun pageRenderer(
 
             "feedEmail" to config.feedEmail,
             "feedEmailRealName" to config.feedEmailRealName,
-            "socials" to config.socials,
+            "socials" to config.socials.map {
+                SocialLink(
+                    name = it.replace("https://", ""),
+                    link = it
+                )
+            },
             "language" to config.language,
 
             "pages" to pages,

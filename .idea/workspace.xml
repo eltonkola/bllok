@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10316bd1-959f-4af0-bb94-797a5920e597" name="Changes" comment="use date">
+    <list default="true" id="10316bd1-959f-4af0-bb94-797a5920e597" name="Changes" comment="clean content">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/engine/IndexRenderer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/engine/IndexRenderer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/engine/TemplateEngine.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/engine/TemplateEngine.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/model/BlogConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/BlogConfig.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/model/BlogPost.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/BlogPost.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -315,7 +318,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749085630406</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="clean content">
+      <option name="closed" value="true" />
+      <created>1749139055088</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1749139055088</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -325,17 +336,7 @@
     <MESSAGE value="update sorting with git history" />
     <MESSAGE value="logs" />
     <MESSAGE value="use date" />
-    <option name="LAST_COMMIT_MESSAGE" value="use date" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/engine/Log.kt</url>
-          <line>8</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="clean content" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean content" />
   </component>
 </project>
