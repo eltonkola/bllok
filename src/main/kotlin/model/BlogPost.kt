@@ -2,6 +2,8 @@ package com.eltonkola.model
 
 import Nav
 import org.intellij.markdown.flavours.commonmark.CommonMarkFlavourDescriptor
+import org.intellij.markdown.flavours.gfm.GFMFlavourDescriptor
+import org.intellij.markdown.flavours.space.SFMFlavourDescriptor
 import org.intellij.markdown.html.HtmlGenerator
 import org.intellij.markdown.parser.MarkdownParser
 import java.io.File
@@ -113,7 +115,8 @@ fun BlogFile.parseBlogPost(): BlogPost {
         language = metadataMap["language"] ?: "en"
     )
 
-    val flavour = CommonMarkFlavourDescriptor()
+    val flavour = GFMFlavourDescriptor()
+//    val flavour = SFMFlavourDescriptor()
     val parsedTree = MarkdownParser(flavour).buildMarkdownTreeFromString(content)
     val html = HtmlGenerator(content, parsedTree, flavour).generateHtml()
 
@@ -123,6 +126,9 @@ fun BlogFile.parseBlogPost(): BlogPost {
         val href = matchResult.groupValues[1]
         """<a href="${href}.html">"""
     }
+        .replace("<body>", "")
+        .replace("</body>", "")
+
     return BlogPost(
         metadata = metadata,
         content = updatedHtml,

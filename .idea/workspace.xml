@@ -6,18 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="10316bd1-959f-4af0-bb94-797a5920e597" name="Changes" comment="use date">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/About.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Android/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Android/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Contact.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Pages/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Projects/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Projects/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Random/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Random/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/Welcome Back.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/rss.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo_content/eltonkola_blog/publish/rss.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Bllok.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Bllok.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/RenderElton.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/RenderElton.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/model/BlogPost.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/BlogPost.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,33 +89,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build bllok.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.bllok [assemble].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.bllok [build].executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.BllokKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.BlogParserKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.RenderEltonKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.RenderLetersiaKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.RenderSkenderbeuKt.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/test/Documents/GitHub/bllok/demo_content/skenderbeu_blog/skenderbeu_blog/Pages&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/test/Documents/GitHub/bllok/src/main/kotlin/Main.kt&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build bllok.executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.bllok [assemble].executor": "Run",
+    "Gradle.bllok [build].executor": "Run",
+    "Kotlin.BllokKt.executor": "Run",
+    "Kotlin.BlogParserKt.executor": "Run",
+    "Kotlin.MainKt.executor": "Run",
+    "Kotlin.RenderEltonKt.executor": "Run",
+    "Kotlin.RenderLetersiaKt.executor": "Run",
+    "Kotlin.RenderSkenderbeuKt.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/test/Documents/GitHub/bllok/demo_content/skenderbeu_blog/skenderbeu_blog/Pages",
+    "onboarding.tips.debug.path": "C:/Users/test/Documents/GitHub/bllok/src/main/kotlin/Main.kt",
+    "settings.editor.selected.configurable": "advanced.settings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\test\Documents\GitHub\bllok\demo_content\skenderbeu_blog\skenderbeu_blog\Pages" />
       <recent name="C:\Users\test\Documents\GitHub\bllok\src\test\kotlin" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\test\Documents\GitHub\bllok\demo_content\eltonkola_blog\blog\Pages" />
       <recent name="C:\Users\test\Documents\GitHub\bllok\demo_content\themes\hacker_template" />
       <recent name="C:\Users\test\Documents\GitHub\bllok\demo_content\skenderbeu_blog\skenderbeu_blog\Memorje" />
       <recent name="C:\Users\test\Documents\GitHub\bllok\demo_content\skenderbeu_blog\skenderbeu_blog" />
@@ -316,7 +307,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749050962484</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="use date">
+      <option name="closed" value="true" />
+      <created>1749085630406</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1749085630406</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
